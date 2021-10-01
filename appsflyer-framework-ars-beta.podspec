@@ -23,15 +23,14 @@ Pod::Spec.new do |s|
     s.ios.frameworks = 'Security', 'SystemConfiguration', 'CoreTelephony'
     s.osx.frameworks  = 'Security'
 
+    s.ios.preserve_paths = 'AppsFlyerLib.xcframework'
+    s.ios.vendored_frameworks = 'AppsFlyerLib.xcframework'
 
-    ss.ios.preserve_paths = 'AppsFlyerLib.xcframework'
-    ss.ios.vendored_frameworks = 'AppsFlyerLib.xcframework'
+    s.tvos.preserve_paths = 'AppsFlyerLib.xcframework'
+    s.tvos.vendored_frameworks = 'AppsFlyerLib.xcframework'
 
-    ss.tvos.preserve_paths = 'AppsFlyerLib.xcframework'
-    ss.tvos.vendored_frameworks = 'AppsFlyerLib.xcframework'
-
-    ss.osx.preserve_paths = 'AppsFlyerLib.xcframework'
-    ss.osx.vendored_frameworks = 'AppsFlyerLib.xcframework'
+    s.osx.preserve_paths = 'AppsFlyerLib.xcframework'
+    s.osx.vendored_frameworks = 'AppsFlyerLib.xcframework'
 
 
 end
