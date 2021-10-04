@@ -1,12 +1,9 @@
 # appsflyer-framework-ars-beta
-
-This repository is created to provide AppsFlyer SDK including ARS module for closed alpha-testing. It is based on the AppsFlyer SDK `6.4.0` version.
-
-# Adding SDK to your project 
+## Adding SDK to your project 
 
 To install the SDK using `CocoaPods`, add  `'pod 'appsflyer-framework-ars-beta''` to your Podfile and run `pod update`.
 
-# ARS SDK Initialization - Swift Example 
+## ARS SDK Initialization - Swift Example 
 
 ```
 import StoreKit
@@ -42,7 +39,7 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 }
 ```
 
-# ARS SDK Initialization - Objective-C Example 
+## ARS SDK Initialization - Objective-C Example 
 
 ```
 #import <UIKit/UIKit.h>
@@ -83,7 +80,7 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     return @{@"key1" : @"param1"};
 }
 ```
-# ARS SDK - Setting CUID
+## ARS SDK - Setting CUID
 
 You might wish to consider delaying the SDK initialization until setting CUID to ensure that the SDK doesn't begin functioning until the CUID is provided. Setting customer user id can be done as follows:
 
