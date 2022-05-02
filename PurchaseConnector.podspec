@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     s.author           = { 'Maxim' => 'maxim\@appsflyer.com', 'af-obodovskyi' => 'ivan.obodovskyi\@appsflyer.com', 'Andrii' => 'andrii.h\@appsflyer.com' }
     s.source           = { :git => 'https://github.com/AppsFlyerSDK/appsflyer-framework-ars-beta.git', :tag => s.version.to_s }
     s.requires_arc = true
-    s.platform     = :ios, :tvos, :osx
+    s.platform     = :ios
 
     s.ios.deployment_target = '9.0'
 
