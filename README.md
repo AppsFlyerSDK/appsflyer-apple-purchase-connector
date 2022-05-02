@@ -1,27 +1,34 @@
 # appsflyer-framework-ars-beta
 ## Adding SDK to your project 
 
-To install the SDK using `CocoaPods`, add  `'pod 'appsflyer-framework-ars-beta''` to your Podfile and run `pod update`.
+To install the SDK using `CocoaPods`, add  `'pod 'PurchaseConnector'` to your Podfile and run `pod update`.
+
+Note: Please make sure to install and set up AppsFlyerFramework pod version `6.6.0` or later `pod 'AppsFlyerFramework'`
 
 ## ARS SDK Initialization - Swift Example 
 
 ```
 import StoreKit
-import AppsFlyerLib
+import PurchaseConnector
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
    func application(_ _: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Default SDK Implementation
-      AppsFlyerLib.shared().appsFlyerDevKey = "DEV_KEY"
-      AppsFlyerLib.shared().appleAppID = "APLE_APP_ID"
-      AppsFlyerLib.shared().isDebug = true
+        AppsFlyerLib.shared().appsFlyerDevKey = "DEV_KEY"
+        AppsFlyerLib.shared().appleAppID = "APLE_APP_ID"
+        AppsFlyerLib.shared().isDebug = true
       
    // ARS implementation
-      AppsFlyerLib.shared().useReceiptValidationSandbox = true // Use in sandbox environment only
-      AppsFlyerLib.shared().autoLogPurchaseRevenue = [.renewable]
-      AppsFlyerLib.shared().purchaseRevenueDataSource = self
-      AppsFlyerLib.shared().purchaseRevenueDelegate = self
+        PurchaseConnector.shared().isSandbox = true
+        PurchaseConnector.shared().purchaseRevenueDelegate = self
+        PurchaseConnector.shared().purchaseRevenueDataSource = self
+        PurchaseConnector.shared().autoLogPurchaseRevenue = .renewable
    }
+
+   func applicationDidBecomeActive(_ application: UIApplication) {
+        PurchaseConnector.shared().startObservingTransactions()
+        AppsFlyerLib.shared().start()
+    }
 }
 
 extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
@@ -42,31 +49,36 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 ## ARS SDK Initialization - Objective-C Example 
 
 ```
-#import <UIKit/UIKit.h>
-#import "AppsFlyerLib.h"
-#import "AFSDKStoreKit.h"
-#import <StoreKit/StoreKit.h>
+#import "AppDelegate.h"
+#import <PurchaseConnector/PurchaseConnector.h>
+#import <AppsFlyerLib/AppsFLyerLib.h>
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, AppsFlyerPurchaseRevenueDataSource, AppsFlyerPurchaseRevenueDelegate>
+@interface AppDelegate () <AppsFlyerPurchaseRevenueDelegate, AppsFlyerPurchaseRevenueDataSource>
 
 @end
 
+@implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Default SDK Implementation
+    
+    // Set up AppsFlyerLib first
     [[AppsFlyerLib shared] setAppleAppID:@"APPLE_APP_ID"];
     [[AppsFlyerLib shared] setAppsFlyerDevKey:@"DEV_KEY"];
     [[AppsFlyerLib shared] setIsDebug:YES];
     
-    //ARS implementation
-    [[AppsFlyerLib shared] setUseReceiptValidationSandbox:YES]; // Use only in sandbox environment
-    [[AppsFlyerLib shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsRenewable];
-    [[AppsFlyerLib shared] setPurchaseRevenueDelegate:self];
-    [[AppsFlyerLib shared] setPurchaseRevenueDataSource:self];
-    
-    
+    // Set up PurchaseConnector
+    [[PurchaseConnector shared] startObservingTransactions];
+    [[PurchaseConnector shared] setIsSandbox:YES];
+    [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
+    [[PurchaseConnector shared] setPurchaseRevenueDataSource:self];
+    [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsRenewable];
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[PurchaseConnector shared] startObservingTransactions];
+    [[AppsFlyerLib shared] start];
 }
 
 - (void)didReceivePurchaseRevenueValidationInfo:(NSDictionary *)validationInfo error:(NSError *)error {
@@ -79,6 +91,8 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 - (NSDictionary *)purchaseRevenueAdditionalParametersForProducts:(NSSet<SKProduct *> *)products transactions:(NSSet<SKPaymentTransaction *> *)transactions {
     return @{@"key1" : @"param1"};
 }
+
+@end
 ```
 ## ARS SDK - Setting CUID
 
