@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '9.0'
 
     s.ios.frameworks = 'Security', 'SystemConfiguration', 'CoreTelephony'
-    s.ios.dependency 'AppsFlyerFramework', "~> #{s.version}"
+    s.ios.dependency 'AppsFlyerFramework/Dynamic', "~> #{s.version}"
 
     s.ios.preserve_paths = 'PurchaseConnector.xcframework'
     s.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
