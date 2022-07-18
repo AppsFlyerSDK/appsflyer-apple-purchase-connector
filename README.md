@@ -136,6 +136,8 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 
 ### <a id="start"> Start Observing Transactions
 
+`startObservingTransactions` should be called to start observing transactions.
+
 - Swift 
 ```swift
     PurchaseConnector.shared().startObservingTransactions()
@@ -147,6 +149,8 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 ```
 
 ### <a id="stop"> Stop Observing Transactions
+
+To stop observing transactions, you need to call `stopObservingTransactions`.
 
 - Swift 
 ```swift
