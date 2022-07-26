@@ -46,7 +46,7 @@ pod 'PurchaseConnector'
 // Default SDK Implementation
     AppsFlyerLib.shared().appsFlyerDevKey = "DEV_KEY"
     AppsFlyerLib.shared().appleAppID = "APPLE_APP_ID"
-    AppsFlyerLib.shared().isDebug = true
+    //AppsFlyerLib.shared().isDebug = true
 
 // Purchase connector implementation 
     PurchaseConnector.shared().purchaseRevenueDelegate = self
@@ -63,7 +63,7 @@ pod 'PurchaseConnector'
 // Default SDK implementation
     [[AppsFlyerLib shared] setAppleAppID:@"APPLE_APP_ID"];
     [[AppsFlyerLib shared] setAppsFlyerDevKey:@"DEV_KEY"];
-    [[AppsFlyerLib shared] setIsDebug:YES];
+    //[[AppsFlyerLib shared] setIsDebug:YES];
 
 // Purchase Connecor implementation
     [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
@@ -178,7 +178,7 @@ In order to test purchases in Xcode environment on a real device with TestFlight
     [[PurchaseConnector shared] setIsSandbox:YES];
 ```
 
-> *IMPORTANT NOTE: Before releasing your app to production, please be sure, to remove `isSandbox` or set it to `false`. If the production purchase event will be sent in sandbox mode, your event will not be validated propperly! *
+> *IMPORTANT NOTE: Before releasing your app to production please be sure to remove `isSandbox` or set it to `false`. If the production purchase event will be sent in sandbox mode, your event will not be validated properly! *
 
 ***
 
@@ -195,7 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Default SDK Implementation
         AppsFlyerLib.shared().appsFlyerDevKey = "DEV_KEY"
         AppsFlyerLib.shared().appleAppID = "APLE_APP_ID"
-        AppsFlyerLib.shared().isDebug = true
+        // AppsFlyerLib.shared().isDebug = true
       
    // Purchase Connector implementation
         PurchaseConnector.shared().isSandbox = true
@@ -243,7 +243,7 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     // Set up AppsFlyerLib first
     [[AppsFlyerLib shared] setAppleAppID:@"APPLE_APP_ID"];
     [[AppsFlyerLib shared] setAppsFlyerDevKey:@"DEV_KEY"];
-    [[AppsFlyerLib shared] setIsDebug:YES];
+    // [[AppsFlyerLib shared] setIsDebug:YES];
     
     // Set up PurchaseConnector
     [[PurchaseConnector shared] startObservingTransactions];
