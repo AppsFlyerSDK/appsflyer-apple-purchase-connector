@@ -24,7 +24,7 @@ support@appsflyer.com
 
 ## <a id="plugin-build-for"> This Module is Built for
 - iOS version 9 and higher.
-- iOS AppsFlyer SDK **6.6.1** and higher.
+- iOS AppsFlyer SDK **6.8.0** and higher.
 
 ## <a id="install-connector">  Adding The Connector To Your Project via Cocoapods: 
 Add to your Podfile and run `pod install`:
