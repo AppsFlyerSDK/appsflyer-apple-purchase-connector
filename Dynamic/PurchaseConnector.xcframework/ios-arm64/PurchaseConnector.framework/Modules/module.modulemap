@@ -1,0 +1,7 @@
+framework module PurchaseConnector {
+    umbrella header "PurchaseConnector.h"
+
+    export *
+    module * { export * }
+}
+

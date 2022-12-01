@@ -6,17 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFSDKAutoLogPurchaseOptions.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-
-// Purchase revenue API
-typedef NS_OPTIONS(NSInteger, AFSDKAutoLogPurchaseRevenueOptions) {
-    AFSDKAutoLogPurchaseRevenueOptionsDisabled = 0,
-    AFSDKAutoLogPurchaseRevenueOptionsAutoRenewableSubscriptions = 1 << 0,
-    AFSDKAutoLogPurchaseRevenueOptionsInAppPurchases = 1 << 1,
-} NS_SWIFT_NAME(AutoLogPurchaseRevenueOptions);
-
 
 NS_SWIFT_NAME(PurchaseRevenueDelegate)
 @protocol AppsFlyerPurchaseRevenueDelegate <NSObject>
