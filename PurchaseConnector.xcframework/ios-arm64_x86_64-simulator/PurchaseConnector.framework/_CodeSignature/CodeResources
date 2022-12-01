@@ -4,41 +4,56 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/AFSDKAutoLogPurchaseOptions.h</key>
+		<data>
+		MTbw6JBfcC1wE9s4T3nl/mJeQ1E=
+		</data>
 		<key>Headers/PurchaseConnector.h</key>
 		<data>
-		/96mmzSNk9kYm01SFxpRn0LFT/U=
+		mTfjp7rcN8ZtgSpS/KnY7l+AVYg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		vj6bYTYjg+UwtoNdID2de4vu3wA=
+		Q7HNMzTNejTVPvd+KlMewx5RMss=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		Wg5bcYA3s0dV9h/wh5pXQBfjvZY=
+		2v0NJ4QqfZBxYWThoKlngbwAx/s=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/AFSDKAutoLogPurchaseOptions.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MTbw6JBfcC1wE9s4T3nl/mJeQ1E=
+			</data>
+			<key>hash2</key>
+			<data>
+			pNsC7dSMPhBKWB6WKa1rXE+glBhCkzhaqGG+MiKo3DI=
+			</data>
+		</dict>
 		<key>Headers/PurchaseConnector.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/96mmzSNk9kYm01SFxpRn0LFT/U=
+			mTfjp7rcN8ZtgSpS/KnY7l+AVYg=
 			</data>
 			<key>hash2</key>
 			<data>
-			u2HXShAi0DbCnWEH8aVL1MEOC3GErhASezUotZo8h78=
+			dopmYFcM1cNLK4aegS8Uke48mq2KePHGbG0OBZ1Zw2E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Wg5bcYA3s0dV9h/wh5pXQBfjvZY=
+			2v0NJ4QqfZBxYWThoKlngbwAx/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			RfeYHT/Jl+2N88hOSU+39R61X0o9BrU/BwbZM5+kRTc=
+			HLVQEP8XIM6ZLUmbVdjAgA0DbMMRUg6JCHEoDJcehME=
 			</data>
 		</dict>
 	</dict>
