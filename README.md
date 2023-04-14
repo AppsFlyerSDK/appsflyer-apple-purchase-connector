@@ -11,7 +11,10 @@ support@appsflyer.com
 
 ## Table Of Content
   * [This Module is Built for](#plugin-build-for)
-  * [Adding The Connector To Your Project via Cocoapods](#install-connector)
+  * [Adding The Connector To Your Project](#install-connector)
+    + [Cocoapods](#cocoapods)
+    + [Carthage](#carthage)
+    + [SPM](#spm)
   * [Basic Integration Of The Connector](#basic-integration)
     + [Set up Purchase Connector](#create-instance)
     + [Log Auto-Renewable Subscriptions and In-App Purchases](#log-subscriptions)
@@ -26,11 +29,28 @@ support@appsflyer.com
 - iOS version 9 and higher.
 - iOS AppsFlyer SDK **6.8.0** and higher.
 
-## <a id="install-connector">  Adding The Connector To Your Project via Cocoapods: 
+
+## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
 Add to your Podfile and run `pod install`:
 ```
 pod 'PurchaseConnector'
 ```
+
+
+## <a id="carthage">  Adding The Connector To Your Project via Carthage: 
+Go to the `Carthage` folder in the root of the repository. Open `purchase-connector-dynamic.json` or `purchase-connector-static.json`, click raw, copy and paste the URL of the file to your `Cartfile`: 
+```
+binary "https://raw.githubusercontent.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/main/Carthage/purchase-connector-dynamic.json" == BIINARY_VERSION
+binary "https://raw.githubusercontent.com/AppsFlyerSDK/AppsFlyerFramework/master/Carthage/appsflyer-ios.json" ~> 6.10.0
+```
+Then open project folder in the terminal and use command `carthage update --use-xcframeworks`, then, drag and drop PurchaseConnector.xcframework binary and AppsFlyerLib.framework (from Carthage/Build/iOS folder).
+
+More reference on Carthage binary artifacts integration [here](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md).
+
+## <a id="spm">  Adding The Connector To Your Project via SPM: 
+Please, follow standard SPM dependency manager instructions and pick only one Package product, when the package is resolved. `PurchaseConnector` stands for statically linked binary and `PurchaseConnector-Dynamic` - for dynamically linked library. 
+
+> *Note: as PurchaseConnector has a dependency on [AppsFlyerLib framework](https://github.com/AppsFlyerSDK/AppsFlyerFramework), please, make sure to integrate it as well for Carthage and SPM.*
 
 ## <a id="basic-integration"> Basic Integration Of The Connector
 > *Note: before the implementation of the Purchase connector, please make sure to set up AppsFlyer `appId` and `devKey`*
@@ -198,7 +218,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // AppsFlyerLib.shared().isDebug = true
       
    // Purchase Connector implementation
-        PurchaseConnector.shared().isSandbox = true
         PurchaseConnector.shared().purchaseRevenueDelegate = self
         PurchaseConnector.shared().purchaseRevenueDataSource = self
         PurchaseConnector.shared().autoLogPurchaseRevenue = .renewable
@@ -247,7 +266,6 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     
     // Set up PurchaseConnector
     [[PurchaseConnector shared] startObservingTransactions];
-    [[PurchaseConnector shared] setIsSandbox:YES];
     [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
     [[PurchaseConnector shared] setPurchaseRevenueDataSource:self];
     [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsRenewable];
