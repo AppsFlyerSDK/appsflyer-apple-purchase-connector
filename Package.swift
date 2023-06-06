@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
@@ -15,7 +15,7 @@ let package = Package(
             targets: ["PurchaseConnector-Dynamic"])
     ],
     dependencies: [
-        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", from: "6.10.1")
+        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", exact: "6.10.1")
     ],
     targets: [
         .binaryTarget(
