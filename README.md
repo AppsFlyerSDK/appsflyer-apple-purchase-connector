@@ -136,8 +136,8 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 @implementation AppDelegate
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[PurchaseConnector shared] startObservingTransactions];
     [[AppsFlyerLib shared] start];
+    [[PurchaseConnector shared] startObservingTransactions];
 }
 
 - (void)didReceivePurchaseRevenueValidationInfo:(NSDictionary *)validationInfo error:(NSError *)error {
@@ -156,7 +156,8 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
 
 ### <a id="start"> Start Observing Transactions
 
-`startObservingTransactions` should be called to start observing transactions.
+`startObservingTransactions` should be called to start observing transactions.<br>
+ > *Note: This should be called right after the AppsFlyer iOS SDK's start method..*
 
 - Swift 
 ```swift
@@ -220,12 +221,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    // Purchase Connector implementation
         PurchaseConnector.shared().purchaseRevenueDelegate = self
         PurchaseConnector.shared().purchaseRevenueDataSource = self
-        PurchaseConnector.shared().autoLogPurchaseRevenue = .renewable
+        PurchaseConnector.shared().autoLogPurchaseRevenue = .autoRenewableSubscriptions
    }
 
    func applicationDidBecomeActive(_ application: UIApplication) {
-        PurchaseConnector.shared().startObservingTransactions()
         AppsFlyerLib.shared().start()
+        PurchaseConnector.shared().startObservingTransactions()
     }
 }
 
@@ -268,13 +269,13 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     [[PurchaseConnector shared] startObservingTransactions];
     [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
     [[PurchaseConnector shared] setPurchaseRevenueDataSource:self];
-    [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsRenewable];
+    [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsAutoRenewableSubscriptions];
     return YES;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[PurchaseConnector shared] startObservingTransactions];
-    [[AppsFlyerLib shared] start];
+     [[AppsFlyerLib shared] start];
+     [[PurchaseConnector shared] startObservingTransactions];
 }
 
 - (void)didReceivePurchaseRevenueValidationInfo:(NSDictionary *)validationInfo error:(NSError *)error {
