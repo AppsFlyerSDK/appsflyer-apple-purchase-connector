@@ -7,7 +7,7 @@
 🛠 In order for us to provide optimal support, we would kindly ask you to submit any issues to
 support@appsflyer.com
 
-> *When submitting an issue please specify your AppsFlyer sign-up (account) email , your app ID , production steps, logs, code snippets and any additional relevant information.* 
+> *When submitting an issue please specify your AppsFlyer sign-up (account) email , your app ID , production steps, logs, code snippets and any additional relevant information.
 
 ## Table Of Content
   * [This Module is Built for](#plugin-build-for)
@@ -28,6 +28,9 @@ support@appsflyer.com
 ## <a id="plugin-build-for"> This Module is Built for
 - iOS version 9 and higher.
 - iOS AppsFlyer SDK **6.8.0** and higher.
+
+> *IMPORTNANT NOTE: Purchase Connector v6.10.1 is not compatible with SDK v6.11.0 and above.
+If you are using Purchase Connector v6.10.1, please use SDK v6.10.1 or lower.*
 
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
