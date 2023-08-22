@@ -29,7 +29,8 @@ support@appsflyer.com
 - iOS version 9 and higher.
 - iOS AppsFlyer SDK **6.8.0** and higher.
 
-> *IMPORTNANT NOTE: Purchase Conenctor v6.10.1 should depend only on AppsFlyerLib v.6.10.1*
+> *IMPORTNANT NOTE: Purchase Connector v6.10.1 is not compatible with SDK v6.11.0 and above.
+If you are using Purchase Connector v6.10.1, please use SDK v6.10.1 or lower.*
 
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
