@@ -9,10 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "PurchaseConnector",
-            targets: ["PurchaseConnector"]),
-        .library(
-            name: "PurchaseConnector-Dynamic",
-            targets: ["PurchaseConnector-Dynamic"])
+            targets: ["PurchaseConnector"])
     ],
     dependencies: [
         .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", exact: "6.10.1")
@@ -21,10 +18,6 @@ let package = Package(
         .binaryTarget(
             name: "PurchaseConnector",
             path: "PurchaseConnector.xcframework"
-        ),
-        .binaryTarget(
-            name: "PurchaseConnector-Dynamic",
-            path: "Dynamic/PurchaseConnector.xcframework"
         )
     ]
 )
