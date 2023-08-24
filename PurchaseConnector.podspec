@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'PurchaseConnector'
-    s.version          = "6.10.1"
+    s.version          = "6.12.2"
     s.summary          = 'AppsFlyer iOS SDK ARS Beta'
 
     s.description      = <<-DESC
