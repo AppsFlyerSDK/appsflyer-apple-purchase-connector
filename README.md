@@ -279,7 +279,6 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     // [[AppsFlyerLib shared] setIsDebug:YES];
     
     // Set up PurchaseConnector
-    [[PurchaseConnector shared] startObservingTransactions];
     [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
     [[PurchaseConnector shared] setPurchaseRevenueDataSource:self];
     [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsAutoRenewableSubscriptions];
