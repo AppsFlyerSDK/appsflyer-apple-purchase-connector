@@ -29,8 +29,15 @@ support@appsflyer.com
 - iOS version 9 and higher.
 - iOS AppsFlyer SDK **6.8.0** and higher.
 
-> *IMPORTNANT NOTE: Purchase Connector v6.10.1 is not compatible with SDK v6.11.0 and above.
-If you are using Purchase Connector v6.10.1, please use SDK v6.10.1 or lower.*
+> *IMPORTNANT NOTE: Please, be sure to check Purchase Connector and AppsFlyerFramework version compatability table and use corresponding versions to avoid unexpected behaviour *
+
+|  PurchaseConnector  | AppsFlyerSDK |
+| :------: | :--------: |
+| 6.8.0    | 6.8.0 - 6.9.2 |
+| 6.8.1    | 6.8.0 - 6.9.2 |
+| 6.10.0   |  6.10.0 |
+| 6.10.1   |  6.10.1 |
+| 6.12.2   |  6.12.2 |
 
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
@@ -51,7 +58,10 @@ Then open project folder in the terminal and use command `carthage update --use-
 More reference on Carthage binary artifacts integration [here](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md).
 
 ## <a id="spm">  Adding The Connector To Your Project via SPM: 
-Please, follow standard SPM dependency manager instructions and pick only one Package product, when the package is resolved. `PurchaseConnector` stands for statically linked binary and `PurchaseConnector-Dynamic` - for dynamically linked library. 
+Please, follow standard SPM dependency manager instructions.
+
+> *Note: This repository contains statically linked `PurchaseConnector.xcframework`. If you want to use dynamic .xcframework, please integrate it for SPM from this repository:
+https://github.com/AppsFlyerSDK/PurchaseConnector-Dynamic* 
 
 > *Note: as PurchaseConnector has a dependency on [AppsFlyerLib framework](https://github.com/AppsFlyerSDK/AppsFlyerFramework), please, make sure to integrate it as well for Carthage and SPM.*
 
@@ -269,7 +279,6 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate {
     // [[AppsFlyerLib shared] setIsDebug:YES];
     
     // Set up PurchaseConnector
-    [[PurchaseConnector shared] startObservingTransactions];
     [[PurchaseConnector shared] setPurchaseRevenueDelegate:self];
     [[PurchaseConnector shared] setPurchaseRevenueDataSource:self];
     [[PurchaseConnector shared] setAutoLogPurchaseRevenue:AFSDKAutoLogPurchaseRevenueOptionsAutoRenewableSubscriptions];
