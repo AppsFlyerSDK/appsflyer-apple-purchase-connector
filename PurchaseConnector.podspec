@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'PurchaseConnector'
-    s.version          = "6.12.2"
+    s.version          = "6.12.3"
     s.summary          = 'AppsFlyer iOS SDK ARS Beta'
 
     s.description      = <<-DESC
@@ -22,13 +22,13 @@ Pod::Spec.new do |s|
     s.default_subspecs = 'Main'
 
     s.subspec 'Main' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework', "#{s.version}"
+        ss.ios.dependency 'AppsFlyerFramework', "6.12.2"
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
      end
 
     s.subspec 'Dynamic' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework/Dynamic', "#{s.version}"
+        ss.ios.dependency 'AppsFlyerFramework/Dynamic', "6.12.2"
         ss.ios.preserve_paths = 'Dynamic/PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'Dynamic/PurchaseConnector.xcframework'
    end
