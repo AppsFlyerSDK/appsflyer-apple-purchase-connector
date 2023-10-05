@@ -39,6 +39,7 @@ support@appsflyer.com
 | 6.10.0   |  6.10.0 |
 | 6.10.1   |  6.10.1 |
 | 6.12.2   |  6.12.2 |
+| 6.12.3   |  6.12.2 |
 
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
