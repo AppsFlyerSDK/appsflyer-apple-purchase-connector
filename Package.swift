@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "PurchaseConnector",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(
@@ -12,7 +12,7 @@ let package = Package(
             targets: ["PurchaseConnector"])
     ],
     dependencies: [
-        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", exact: "6.13.1")
+        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static.git", exact: "6.14.2")
     ],
     targets: [
         .binaryTarget(

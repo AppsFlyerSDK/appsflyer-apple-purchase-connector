@@ -14,21 +14,21 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		v2y2ajNkvgGQ4zRX+CoiSnNVKBQ=
+		rKcH9Osn6crSAqUJKq4CHme1/ZQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		2v0NJ4QqfZBxYWThoKlngbwAx/s=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		eBI+JjQ6mzoUKwoZmBhMq+X92bI=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/AFSDKAutoLogPurchaseOptions.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			MTbw6JBfcC1wE9s4T3nl/mJeQ1E=
-			</data>
 			<key>hash2</key>
 			<data>
 			pNsC7dSMPhBKWB6WKa1rXE+glBhCkzhaqGG+MiKo3DI=
@@ -36,10 +36,6 @@
 		</dict>
 		<key>Headers/PurchaseConnector.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			mTfjp7rcN8ZtgSpS/KnY7l+AVYg=
-			</data>
 			<key>hash2</key>
 			<data>
 			dopmYFcM1cNLK4aegS8Uke48mq2KePHGbG0OBZ1Zw2E=
@@ -47,13 +43,16 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2v0NJ4QqfZBxYWThoKlngbwAx/s=
-			</data>
 			<key>hash2</key>
 			<data>
 			HLVQEP8XIM6ZLUmbVdjAgA0DbMMRUg6JCHEoDJcehME=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5z89BHWyVKiEwWEPb0gOGuqGnYIfvmfDEsHJhOo7vbY=
 			</data>
 		</dict>
 	</dict>
