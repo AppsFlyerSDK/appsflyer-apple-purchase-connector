@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFSDKAutoLogPurchaseOptions.h"
+#import <PurchaseConnector/AFSDKAutoLogPurchaseOptions.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +17,7 @@ NS_SWIFT_NAME(PurchaseRevenueDelegate)
 - (void)didReceivePurchaseRevenueValidationInfo:(NSDictionary * _Nullable)validationInfo error:(NSError * _Nullable)error;
 
 @end
+
 
 @class SKPaymentTransaction;
 @class SKProduct;

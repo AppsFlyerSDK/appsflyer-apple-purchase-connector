@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/AFSDKAutoLogPurchaseOptions.h</key>
 		<data>
-		MTbw6JBfcC1wE9s4T3nl/mJeQ1E=
+		4vRE8KRsfddx0Rh+8YdJt2wsLeo=
 		</data>
 		<key>Headers/PurchaseConnector.h</key>
 		<data>
-		mTfjp7rcN8ZtgSpS/KnY7l+AVYg=
+		mgOqC/GuuL37w3oprjCp0PCJRfA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -31,14 +31,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pNsC7dSMPhBKWB6WKa1rXE+glBhCkzhaqGG+MiKo3DI=
+			rPj04KVBrGbEl+L+uZlYbO+j/HhZ3imz1ChND9C9s2Q=
 			</data>
 		</dict>
 		<key>Headers/PurchaseConnector.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dopmYFcM1cNLK4aegS8Uke48mq2KePHGbG0OBZ1Zw2E=
+			sZsjMB6d3HEwDA0d2yeGpYrdz2ZjONxLp+Alh2lqWwY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
