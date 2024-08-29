@@ -45,7 +45,14 @@ support@appsflyer.com
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
 Add to your Podfile and run `pod install`:
 ```
+// for statically linked dependency
 pod 'PurchaseConnector'
+
+// for dynamically linked dependency
+pod 'PurchaseConnector/Dynamic'
+
+// for statically linked Strict dependency (disabled IDFA collection)
+pod 'PurchaseConnector/Strict'
 ```
 
 
