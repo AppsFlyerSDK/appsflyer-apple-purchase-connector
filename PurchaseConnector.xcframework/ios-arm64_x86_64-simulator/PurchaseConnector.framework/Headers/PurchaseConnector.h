@@ -19,6 +19,7 @@ NS_SWIFT_NAME(PurchaseRevenueDelegate)
 
 @end
 
+NS_SWIFT_NAME(PurchaseRevenueDataSourceProtocol)
 @protocol AppsFlyerPurchaseRevenueDataSourceProtocol <NSObject>
 @end
 
