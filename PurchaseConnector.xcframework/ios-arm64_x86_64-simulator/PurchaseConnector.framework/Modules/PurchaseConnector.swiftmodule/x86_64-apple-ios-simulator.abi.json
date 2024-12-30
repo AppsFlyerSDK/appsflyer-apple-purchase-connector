@@ -3771,6 +3771,56 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isConformingDataSourceRevenue",
+            "printedName": "isConformingDataSourceRevenue()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate(im)isConformingDataSourceRevenue",
+            "mangledName": "$s17PurchaseConnector21AFSDKStoreKitDelegateP29isConformingDataSourceRevenueSbyF",
+            "moduleName": "PurchaseConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : PurchaseConnector.AFSDKStoreKitDelegate>",
+            "sugared_genericSig": "<Self where Self : PurchaseConnector.AFSDKStoreKitDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getEnvironmentAsString",
+            "printedName": "getEnvironmentAsString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate(im)getEnvironmentAsString",
+            "mangledName": "$s17PurchaseConnector21AFSDKStoreKitDelegateP22getEnvironmentAsStringSSyF",
+            "moduleName": "PurchaseConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : PurchaseConnector.AFSDKStoreKitDelegate>",
+            "sugared_genericSig": "<Self where Self : PurchaseConnector.AFSDKStoreKitDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -3988,6 +4038,37 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setAutoLogPurchaseRevenue",
+            "printedName": "setAutoLogPurchaseRevenue(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol(im)setAutoLogPurchaseRevenue:",
+            "mangledName": "$s17PurchaseConnector21AFSDKStoreKitProtocolP010setAutoLogA7RevenueyySiF",
+            "moduleName": "PurchaseConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : PurchaseConnector.AFSDKStoreKitProtocol>",
+            "sugared_genericSig": "<Self where Self : PurchaseConnector.AFSDKStoreKitProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -4056,6 +4137,7 @@
             "isInternal": true,
             "declAttributes": [
               "HasInitialValue",
+              "Final",
               "HasStorage",
               "AccessControl"
             ],
@@ -4103,10 +4185,10 @@
             "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2(py)delegate",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C8delegateAA0C11KitDelegate_pSgvp",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
             "objc_name": "delegate",
             "declAttributes": [
               "HasInitialValue",
+              "Final",
               "ObjC",
               "HasStorage",
               "ReferenceOwnership",
@@ -4141,9 +4223,9 @@
                 "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C8delegateAA0C11KitDelegate_pSgvg",
                 "moduleName": "PurchaseConnector",
                 "implicit": true,
-                "isOpen": true,
                 "objc_name": "delegate",
                 "declAttributes": [
+                  "Final",
                   "ObjC"
                 ],
                 "accessorKind": "get"
@@ -4178,9 +4260,9 @@
                 "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C8delegateAA0C11KitDelegate_pSgvs",
                 "moduleName": "PurchaseConnector",
                 "implicit": true,
-                "isOpen": true,
                 "objc_name": "setDelegate:",
                 "declAttributes": [
+                  "Final",
                   "ObjC"
                 ],
                 "accessorKind": "set"
@@ -4201,12 +4283,12 @@
                 "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C8delegateAA0C11KitDelegate_pSgvM",
                 "moduleName": "PurchaseConnector",
                 "implicit": true,
-                "isOpen": true,
                 "intro_Macosx": "12.0",
                 "intro_iOS": "15.0",
                 "intro_tvOS": "15.0",
                 "intro_watchOS": "8.0",
                 "declAttributes": [
+                  "Final",
                   "Available",
                   "Available",
                   "Available",
@@ -4272,6 +4354,104 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "autoLogPurchaseRevenue",
+            "printedName": "autoLogPurchaseRevenue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17PurchaseConnector14AFSDKStoreKit2C07autoLogA7Revenue33_CF0C771D118AD00400D8AB10EE7117D7LLSivp",
+            "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C07autoLogA7Revenue33_CF0C771D118AD00400D8AB10EE7117D7LLSivp",
+            "moduleName": "PurchaseConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 3,
+            "hasStorage": true
+          },
+          {
+            "kind": "Function",
+            "name": "setAutoLogPurchaseRevenue",
+            "printedName": "setAutoLogPurchaseRevenue(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2(im)setAutoLogPurchaseRevenue:",
+            "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C010setAutoLogA7RevenueyySiF",
+            "moduleName": "PurchaseConnector",
+            "objc_name": "setAutoLogPurchaseRevenue:",
+            "declAttributes": [
+              "Final",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchProducts",
+            "printedName": "fetchProducts(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[StoreKit.Product]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Product",
+                    "printedName": "StoreKit.Product",
+                    "usr": "s:8StoreKit7ProductV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[StoreKit.Transaction]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Transaction",
+                    "printedName": "StoreKit.Transaction",
+                    "usr": "s:8StoreKit11TransactionV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductVGSayAF11TransactionVG_tYaKF",
+            "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductVGSayAF11TransactionVG_tYaKF",
+            "moduleName": "PurchaseConnector",
+            "declAttributes": [
+              "Final"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Function",
             "name": "didReceiveVerifiedTransactions",
             "printedName": "didReceiveVerifiedTransactions(_:)",
@@ -4308,7 +4488,9 @@
             "usr": "s:17PurchaseConnector14AFSDKStoreKit2C30didReceiveVerifiedTransactionsyySay8StoreKit18VerificationResultOyAE11TransactionVGGF",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C30didReceiveVerifiedTransactionsyySay8StoreKit18VerificationResultOyAE11TransactionVGGF",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
+            "declAttributes": [
+              "Final"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4332,7 +4514,9 @@
             "usr": "s:17PurchaseConnector14AFSDKStoreKit2C27didFailToVerifyTransactionsyys5Error_pF",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C27didFailToVerifyTransactionsyys5Error_pF",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
+            "declAttributes": [
+              "Final"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4350,9 +4534,9 @@
             "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2(im)stopObserving",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C13stopObservingyyF",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
             "objc_name": "stopObserving",
             "declAttributes": [
+              "Final",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -4372,9 +4556,9 @@
             "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2(im)loadAndReportPastSubscriptions",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C30loadAndReportPastSubscriptionsyyF",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
             "objc_name": "loadAndReportPastSubscriptions",
             "declAttributes": [
+              "Final",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -4400,9 +4584,9 @@
             "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2(im)recordConsumableWithTransactionSK2:",
             "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C16recordConsumable14transactionSK2yAA016AFSDKTransactionH0C_tF",
             "moduleName": "PurchaseConnector",
-            "isOpen": true,
             "objc_name": "recordConsumableWithTransactionSK2:",
             "declAttributes": [
+              "Final",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -4438,12 +4622,12 @@
         "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKStoreKit2",
         "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C",
         "moduleName": "PurchaseConnector",
-        "isOpen": true,
         "intro_Macosx": "12.0",
         "intro_iOS": "15.0",
         "intro_tvOS": "15.0",
         "intro_watchOS": "8.0",
         "declAttributes": [
+          "Final",
           "ObjC",
           "Available",
           "Available",
@@ -6158,8 +6342,15 @@
     },
     {
       "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/AppsFlyerARS\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/AppsFlyerARS\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
-      "offset": 232,
+      "offset": 238,
       "length": 14,
       "value": "\"PurchaseConnector.AFSDKStoreKit2\""
     },
