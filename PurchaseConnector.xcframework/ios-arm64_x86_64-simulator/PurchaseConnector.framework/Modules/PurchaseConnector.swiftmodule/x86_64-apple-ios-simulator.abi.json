@@ -1065,6 +1065,13 @@
         "moduleName": "PurchaseConnector"
       },
       {
+        "kind": "Import",
+        "name": "PurchaseConnector",
+        "printedName": "PurchaseConnector",
+        "declKind": "Import",
+        "moduleName": "PurchaseConnector"
+      },
+      {
         "kind": "TypeDecl",
         "name": "PurchaseRevenueDataSourceStoreKit2",
         "printedName": "PurchaseRevenueDataSourceStoreKit2",
