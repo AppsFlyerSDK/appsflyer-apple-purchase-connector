@@ -32,7 +32,17 @@ NS_SWIFT_NAME(PurchaseRevenueDataSource)
 @optional
 - (NSDictionary * _Nullable)purchaseRevenueAdditionalParametersForProducts:(NSSet<SKProduct *> *_Nonnull)products
                                                               transactions:(NSSet<SKPaymentTransaction *> *_Nullable)transactions;
+@end
 
+@class AFSDKProductSK2;
+@class AFSDKTransactionSK2;
+
+NS_SWIFT_NAME(PurchaseRevenueDataSourceStoreKit2)
+@protocol AppsFlyerPurchaseRevenueDataSourceStoreKit2 <NSObject,AppsFlyerPurchaseRevenueDataSourceProtocol>
+
+@optional
+- (NSDictionary<NSString *, id> * _Nullable)purchaseRevenueAdditionalParametersStoreKit2ForProducts:(NSSet<AFSDKProductSK2 *> *_Nonnull)products
+                                                                                       transactions:(NSSet<AFSDKTransactionSK2 *> *_Nullable)transactions API_AVAILABLE(ios(15.0));
 @end
 
 /// Enum representing StoreKit versions.

@@ -16,11 +16,18 @@ public protocol AFSDKStoreKit2ObserverDelegateProtocol : AnyObject {
   func didFailToVerifyTransactions(_ error: any Swift.Error)
 }
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-public protocol PurchaseRevenueDataSourceStoreKit2 : ObjectiveC.NSObject, PurchaseConnector.PurchaseRevenueDataSourceProtocol {
-  func purchaseRevenueAdditionalParametersStoreKit2ForProducts(products: Swift.Set<StoreKit.Product>, transactions: Swift.Set<StoreKit.Transaction>?) -> [Swift.String : Any]
+@objc public class AFSDKProductSK2 : ObjectiveC.NSObject {
+  public init(product: StoreKit.Product)
+  public var value: StoreKit.Product {
+    get
+  }
+  @objc deinit
 }
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 @objc public class AFSDKTransactionSK2 : ObjectiveC.NSObject {
   public init(transaction: StoreKit.Transaction)
+  public var value: StoreKit.Transaction {
+    get
+  }
   @objc deinit
 }

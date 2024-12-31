@@ -948,6 +948,49 @@
             "init_kind": "Designated"
           },
           {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Transaction",
+                "printedName": "StoreKit.Transaction",
+                "usr": "s:8StoreKit11TransactionV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17PurchaseConnector19AFSDKTransactionSK2C5value8StoreKit11TransactionVvp",
+            "mangledName": "$s17PurchaseConnector19AFSDKTransactionSK2C5value8StoreKit11TransactionVvp",
+            "moduleName": "PurchaseConnector",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Transaction",
+                    "printedName": "StoreKit.Transaction",
+                    "usr": "s:8StoreKit11TransactionV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17PurchaseConnector19AFSDKTransactionSK2C5value8StoreKit11TransactionVvg",
+                "mangledName": "$s17PurchaseConnector19AFSDKTransactionSK2C5value8StoreKit11TransactionVvg",
+                "moduleName": "PurchaseConnector",
+                "isOpen": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -1066,37 +1109,37 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PurchaseRevenueDataSourceStoreKit2",
-        "printedName": "PurchaseRevenueDataSourceStoreKit2",
+        "name": "AFSDKProductSK2",
+        "printedName": "AFSDKProductSK2",
         "children": [
           {
-            "kind": "Function",
-            "name": "purchaseRevenueAdditionalParametersStoreKit2ForProducts",
-            "printedName": "purchaseRevenueAdditionalParametersStoreKit2ForProducts(products:transactions:)",
+            "kind": "Var",
+            "name": "product",
+            "printedName": "product",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              },
+                "name": "Product",
+                "printedName": "StoreKit.Product",
+                "usr": "s:8StoreKit7ProductV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17PurchaseConnector15AFSDKProductSK2C7product8StoreKit7ProductVvp",
+            "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C7product8StoreKit7ProductVvp",
+            "moduleName": "PurchaseConnector",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
               {
-                "kind": "TypeNominal",
-                "name": "Set",
-                "printedName": "Swift.Set<StoreKit.Product>",
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -1105,58 +1148,185 @@
                     "usr": "s:8StoreKit7ProductV"
                   }
                 ],
-                "usr": "s:Sh"
+                "declKind": "Accessor",
+                "usr": "s:17PurchaseConnector15AFSDKProductSK2C7product8StoreKit7ProductVvg",
+                "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C7product8StoreKit7ProductVvg",
+                "moduleName": "PurchaseConnector",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(product:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AFSDKProductSK2",
+                "printedName": "PurchaseConnector.AFSDKProductSK2",
+                "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKProductSK2"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Set<StoreKit.Transaction>?",
+                "name": "Product",
+                "printedName": "StoreKit.Product",
+                "usr": "s:8StoreKit7ProductV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17PurchaseConnector15AFSDKProductSK2C7productAC8StoreKit7ProductV_tcfc",
+            "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C7productAC8StoreKit7ProductV_tcfc",
+            "moduleName": "PurchaseConnector",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Product",
+                "printedName": "StoreKit.Product",
+                "usr": "s:8StoreKit7ProductV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17PurchaseConnector15AFSDKProductSK2C5value8StoreKit7ProductVvp",
+            "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C5value8StoreKit7ProductVvp",
+            "moduleName": "PurchaseConnector",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Set",
-                    "printedName": "Swift.Set<StoreKit.Transaction>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Transaction",
-                        "printedName": "StoreKit.Transaction",
-                        "usr": "s:8StoreKit11TransactionV"
-                      }
-                    ],
-                    "usr": "s:Sh"
+                    "name": "Product",
+                    "printedName": "StoreKit.Product",
+                    "usr": "s:8StoreKit7ProductV"
                   }
                 ],
-                "usr": "s:Sq"
+                "declKind": "Accessor",
+                "usr": "s:17PurchaseConnector15AFSDKProductSK2C5value8StoreKit7ProductVvg",
+                "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C5value8StoreKit7ProductVvg",
+                "moduleName": "PurchaseConnector",
+                "isOpen": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AFSDKProductSK2",
+                "printedName": "PurchaseConnector.AFSDKProductSK2",
+                "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKProductSK2"
               }
             ],
-            "declKind": "Func",
-            "usr": "s:17PurchaseConnector0A26RevenueDataSourceStoreKit2P08purchasec20AdditionalParametersfG11ForProducts8products12transactionsSDySSypGShy0F3Kit7ProductVG_ShyAH11TransactionVGSgtF",
-            "mangledName": "$s17PurchaseConnector0A26RevenueDataSourceStoreKit2P08purchasec20AdditionalParametersfG11ForProducts8products12transactionsSDySSypGShy0F3Kit7ProductVG_ShyAH11TransactionVGSgtF",
+            "declKind": "Constructor",
+            "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKProductSK2(im)init",
+            "mangledName": "$s17PurchaseConnector15AFSDKProductSK2CACycfc",
             "moduleName": "PurchaseConnector",
-            "genericSig": "<τ_0_0 where τ_0_0 : PurchaseConnector.PurchaseRevenueDataSourceStoreKit2>",
-            "sugared_genericSig": "<Self where Self : PurchaseConnector.PurchaseRevenueDataSourceStoreKit2>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
           }
         ],
-        "declKind": "Protocol",
-        "usr": "s:17PurchaseConnector0A26RevenueDataSourceStoreKit2P",
-        "mangledName": "$s17PurchaseConnector0A26RevenueDataSourceStoreKit2P",
+        "declKind": "Class",
+        "usr": "c:@M@PurchaseConnector@objc(cs)AFSDKProductSK2",
+        "mangledName": "$s17PurchaseConnector15AFSDKProductSK2C",
         "moduleName": "PurchaseConnector",
-        "genericSig": "<τ_0_0 : ObjectiveC.NSObject, τ_0_0 : PurchaseConnector.PurchaseRevenueDataSourceProtocol>",
-        "sugared_genericSig": "<Self : ObjectiveC.NSObject, Self : PurchaseConnector.PurchaseRevenueDataSourceProtocol>",
+        "isOpen": true,
         "intro_Macosx": "12.0",
         "intro_iOS": "15.0",
         "intro_tvOS": "15.0",
         "intro_watchOS": "8.0",
         "declAttributes": [
           "AccessControl",
+          "ObjC",
           "Available",
           "Available",
           "Available",
           "Available"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -6304,6 +6474,13 @@
       "offset": 218,
       "length": 19,
       "value": "\"PurchaseConnector.AFSDKTransactionSK2\""
+    },
+    {
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/AppsFlyerARS\/PurchaseConnector\/AFSDKProductSK2.swift",
+      "kind": "StringLiteral",
+      "offset": 215,
+      "length": 15,
+      "value": "\"PurchaseConnector.AFSDKProductSK2\""
     },
     {
       "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/AppsFlyerARS\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
