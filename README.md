@@ -93,7 +93,7 @@ With the release of AppsFlyer SDK 6.16.0 and Purchase Connector 6.16.0, the Purc
 
 Due to limitations in earlier iOS versions, consumable purchases require manual logging, which is detailed later in this document.
 
-To specify which StoreKit version to use, utilize the setStoreKitVersion: method with the AFSDKStoreKitVersion enum:
+To specify which StoreKit version to use, utilize the `setStoreKitVersion:` method with the AFSDKStoreKitVersion enum:
 ```obj-c
 typedef NS_ENUM(NSUInteger, AFSDKStoreKitVersion) {
     AFSDKStoreKitVersionSK1 = 0, // StoreKit 1
@@ -104,6 +104,9 @@ typedef NS_ENUM(NSUInteger, AFSDKStoreKitVersion) {
 For example, to set StoreKit 2:
 ```obj-c
 [[PurchaseConnector shared] setStoreKitVersion:AFSDKStoreKitVersionSK2];
+```
+```swift
+PurchaseConnector.shared().setStoreKitVersion(.SK2)
 ```
 
 In addition, the Purchase Connector provides wrapper classes to encapsulate StoreKit 2’s Transaction and Product objects due to Objective-c <> Swift interoperability, allowing for seamless integration with the Purchase Connector.
