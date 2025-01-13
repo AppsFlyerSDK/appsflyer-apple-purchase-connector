@@ -85,3 +85,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+.DS_Store

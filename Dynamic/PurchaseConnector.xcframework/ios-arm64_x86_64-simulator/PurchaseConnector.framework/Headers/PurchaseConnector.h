@@ -76,7 +76,7 @@ typedef NS_ENUM(NSUInteger, AFSDKStoreKitVersion) {
 
 /// Logs a message related to StoreKit.
 /// @param stringToLog The message to be logged.
-+ (void)storeKitLoggerWrapper:(NSString *)stringToLog;
+//+ (void)storeKitLoggerWrapper:(NSString *)stringToLog;
 
 @end
 
