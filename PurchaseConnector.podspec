@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     s.swift_version = '5.0'
 
     s.subspec 'Main' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework','6.16.0'
+        ss.ios.dependency 'appsflyer-apple-sdk-qa','6.16.0.225'
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
         ss.ios.resource_bundles = {'PurchaseConnector_Privacy' => ['Resources/PrivacyInfo.xcprivacy']}
