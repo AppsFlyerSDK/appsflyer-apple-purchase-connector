@@ -34,7 +34,6 @@ support@appsflyer.com
 	•	6.8.0+: StoreKit 1 support
 	•	6.16.0+: StoreKit 1 & 2 support
 - Minimum iOS Version: 12
-- iOS AppsFlyer SDK **6.8.0** and higher.
 
 > *IMPORTNANT NOTE: Please, be sure to check Purchase Connector and AppsFlyerFramework version compatability table and use corresponding versions to avoid unexpected behaviour *
 
