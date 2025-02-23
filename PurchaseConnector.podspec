@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
     s.name             = 'PurchaseConnector'
-    s.version          = "6.15.2"
-    s.summary          = 'AppsFlyer iOS SDK ARS Beta'
+    s.version          = "6.15.3"
+    s.summary          = 'AppsFlyer iOS SDK ARS'
 
     s.description      = <<-DESC
     AppsFlyer native track allows you to find what attracts new users to your app,
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
 
     s.homepage         = 'https://www.appsflyer.com'
     s.license          = { :type => 'Proprietary', :text => 'Copyright 2018 AppsFlyer Ltd. All rights reserved.' }
-    s.author           = { 'Maxim' => 'maxim\@appsflyer.com', 'af-obodovskyi' => 'ivan.obodovskyi\@appsflyer.com', 'Andrii' => 'andrii.h\@appsflyer.com' }
-    s.source           = { :git => 'https://github.com/AppsFlyerSDK/appsflyer-framework-ars-beta.git', :tag => s.version.to_s }
+    s.author           = { 'Amit Kremer' => 'amit-kremer93\@appsflyer.com', 'af-obodovskyi' => 'ivan.obodovskyi\@appsflyer.com', 'Veronica' => 'af-vero\@appsflyer.com', 'Moris' => 'morisgateno-appsflyer\@appsflyer.com', 'Amit' => 'al-af\@appsflyer.com'}
+    s.source           = { :git => 'https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector.git', :tag => s.version.to_s }
     s.requires_arc = true
     s.platform     = :ios
     s.ios.deployment_target = '12.0'
