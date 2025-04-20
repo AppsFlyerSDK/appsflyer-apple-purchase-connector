@@ -22,20 +22,20 @@ Pod::Spec.new do |s|
     s.swift_version = '5.0'
 
     s.subspec 'Main' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework','6.15.2'
+        ss.ios.dependency 'appsflyer-apple-sdk-qa','6.17.0.19450585'
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
         ss.ios.resource_bundles = {'PurchaseConnector_Privacy' => ['Resources/PrivacyInfo.xcprivacy']}
      end
 
     s.subspec 'Dynamic' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework/Dynamic','6.15.2'
+        ss.ios.dependency 'appsflyer-apple-sdk-qa/Dynamic','6.17.0.19450585'
         ss.ios.preserve_paths = 'Dynamic/PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'Dynamic/PurchaseConnector.xcframework'
    end
 
     s.subspec 'Strict' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework/Strict','6.15.2'
+        ss.ios.dependency 'appsflyer-apple-sdk-qa/Strict','6.17.0.19450585'
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
         ss.ios.resource_bundles = {'PurchaseConnector_Privacy' => ['Resources/PrivacyInfo.xcprivacy']}
