@@ -86,9 +86,9 @@ StoreKit 2, introduced by Apple, offers a modern Swift-first API for managing in
 ### <a id="pc-capabilities"> New Purchase Connector Capabilities
 With the release of AppsFlyer SDK 6.16.0 and Purchase Connector 6.16.0, the Purchase Connector now supports both StoreKit 1 and StoreKit 2, enabling automatic capture of various transaction types, including:
 - Auto-Renewable Subscriptions
--        Non-Renewing Subscriptions
--        Non-Consumable Purchases
--        Consumable Purchases (from iOS 18+ with appropriate configuration)
+- Non-Renewing Subscriptions
+- Non-Consumable Purchases
+- Consumable Purchases (from iOS 18+ with appropriate configuration)
 Due to limitations in earlier iOS versions, consumable purchases require manual logging, which is detailed later in this document.
 To specify which StoreKit version to use, utilize the `setStoreKitVersion:` method with the AFSDKStoreKitVersion enum:
 ```obj-c
