@@ -5,3 +5,8 @@ framework module PurchaseConnector {
     module * { export * }
 }
 
+
+module PurchaseConnector.Swift {
+  header "PurchaseConnector-Swift.h"
+  requires objc
+}

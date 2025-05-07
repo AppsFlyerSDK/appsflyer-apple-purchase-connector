@@ -1,0 +1,33 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PurchaseConnector
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AppsFlyerLib
+import Foundation
+@_exported import PurchaseConnector
+import StoreKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+public protocol AFSDKStoreKit2ObserverDelegateProtocol : AnyObject {
+  func didReceiveVerifiedTransactions(_ transaction: Swift.Array<StoreKit.VerificationResult<StoreKit.Transaction>>)
+  func didFailToVerifyTransactions(_ error: any Swift.Error)
+}
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+@objc public class AFSDKTransactionSK2 : ObjectiveC.NSObject {
+  public init(transaction: StoreKit.Transaction)
+  public var value: StoreKit.Transaction {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+@objc public class AFSDKProductSK2 : ObjectiveC.NSObject {
+  public init(product: StoreKit.Product)
+  public var value: StoreKit.Product {
+    get
+  }
+  @objc deinit
+}
