@@ -81,10 +81,10 @@ https://github.com/AppsFlyerSDK/PurchaseConnector-Dynamic*
 
 > *Note: as PurchaseConnector has a dependency on [AppsFlyerLib framework](https://github.com/AppsFlyerSDK/AppsFlyerFramework), please, make sure to integrate it as well for Carthage and SPM.*
 
-## <a id="storekit2-overview"> StoreKit 2 Overview
+## <a id="storekit2-overview"> StoreKit 2 Overview (Beta)
 StoreKit 2, introduced by Apple, offers a modern Swift-first API for managing in-app purchases. It simplifies tasks such as fetching product information, handling transactions, and managing subscriptions by leveraging Swift concurrency features like async/await. Additionally, StoreKit 2 provides enhanced tools for testing and debugging in-app purchases, improving the overall developer experience. ￼
 ### <a id="pc-capabilities"> New Purchase Connector Capabilities
-With the release of AppsFlyer SDK 6.16.0 and Purchase Connector 6.16.0, the Purchase Connector now supports both StoreKit 1 and StoreKit 2, enabling automatic capture of various transaction types, including:
+With the release of AppsFlyer SDK 6.16.2 and Purchase Connector 6.16.2, the Purchase Connector now supports both StoreKit 1 and StoreKit 2, enabling automatic capture of various transaction types, including:
 - Auto-Renewable Subscriptions
 - Non-Renewing Subscriptions
 - Non-Consumable Purchases
@@ -120,7 +120,13 @@ if #available(iOS 15.0, *) {
 }
 ```
 
-## <a id="basic-integration"> Basic Integration Of The Connector
+**Important!**  
+Before implementing Purchase Connector for StoreKit 2, ensure that your App Store credentials are updated in the AppsFlyer Revenue settings.  
+For detailed instructions, refer to our  [Help Center article](https://support.appsflyer.com/hc/en-us/articles/27880822483985-Bulletin-Update-App-Store-credendials-for-iOS-ROI360-receipt-validation).
+
+
+
+## <a id="basic-integration"> Basic Integration of the Connector
 > *Note: before the implementation of the Purchase connector, please make sure to set up AppsFlyer `appId` and `devKey`*
 
 ### <a id="create-instance"> Set up Purchase Connector
@@ -261,15 +267,15 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate  Purch
 @end
 ```
 
-### <a id="log-transaction"> Logging Consumable Transactions
+### <a id="log-transaction"> Logging Consumable Transactions (Storekit 2 only)
 
 For iOS versions prior to 18 or when the `SKIncludeConsumableInAppPurchaseHistory` flag is not enabled, consumable purchases must be manually logged. This requires a verified transaction to be wrapped in an `AFSDKTransactionSK2` object before invoking the `logConsumableTransaction` API.
 
 Key Behavior:
--	Automatic Logging:
+-    Automatic Logging:
     -   Non-consumable products, non-renewable subscriptions, and auto-renewable subscriptions are automatically captured by the framework and do not require manual logging.
     - Starting from iOS 18, consumable purchases will also be automatically logged if the `SKIncludeConsumableInAppPurchaseHistory` flag is set to `YES` in the Info.plist file.
--	Manual Logging for Consumables:
+-    Manual Logging for Consumables:
     - For iOS versions 15 to 18 or when the `SKIncludeConsumableInAppPurchaseHistory` flag cannot be used, consumable purchases must be manually logged.
     - This requires a verified transaction to be wrapped in an `AFSDKTransactionSK2` object before invoking the `logConsumableTransaction` API.
 
@@ -494,3 +500,4 @@ extension AppDelegate: PurchaseRevenueDataSource, PurchaseRevenueDelegate Purcha
 
 @end
 ```
+
