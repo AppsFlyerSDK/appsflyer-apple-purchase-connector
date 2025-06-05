@@ -55,15 +55,15 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add Carthage/*.json PurchaseConnector.podspec Package.swift
-          git commit -m "chore: bump version to v${{ env.VERSION }}"
+          git commit -m "chore: bump version to ${{ env.VERSION }}"
           git push
 
       - name: Create annotated tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git tag -a "v${{ env.VERSION }}" -m "Release v${{ env.VERSION }}"
-          git push origin "v${{ env.VERSION }}"
+          git tag -a "${{ env.VERSION }}" -m "Release ${{ env.VERSION }}"
+          git push origin "${{ env.VERSION }}"
 
       - name: Zip XCFramework artifacts
         run: ./scripts/zip_artifacts.sh
@@ -71,8 +71,8 @@ jobs:
       - name: Draft GitHub Release with XCFramework zips
         uses: softprops/action-gh-release@v1
         with:
-          tag_name:    "v${{ env.VERSION }}"
-          name:        "v${{ env.VERSION }}"
+          tag_name:    "${{ env.VERSION }}"
+          name:        "${{ env.VERSION }}"
           draft:       false
           files: |
             purchase-connector-static.xcframework.zip
@@ -90,9 +90,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add README.md
-          git commit -m "docs: update README for v${{ env.VERSION }}" || echo "No README changes"
+          git commit -m "docs: update README for ${{ env.VERSION }}" || echo "No README changes"
           git push
-          
+
       - name: Publish to CocoaPods
         continue-on-error: true
         env:
@@ -130,17 +130,17 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add Package.swift
-          git commit -m "chore(spm-dynamic): bump to v${VERSION}" || echo "Nothing to commit"
-          git tag -a "v${VERSION}" -m "Release v${VERSION} PurchaseConnector-Dynamic"
+          git commit -m "chore(spm-dynamic): bump to ${VERSION}" || echo "Nothing to commit"
+          git tag -a "${VERSION}" -m "Release ${VERSION} PurchaseConnector-Dynamic"
           git push origin main
-          git push origin "v${VERSION}"
+          git push origin "${VERSION}"
 
       - name: Draft Dynamic SPM Release
         uses: softprops/action-gh-release@v1
         with:
           repository: AppsFlyerSDK/PurchaseConnector-Dynamic
-          tag_name:    "v${{ env.VERSION }}"
-          name:        "PurchaseConnector-Dynamic v${{ env.VERSION }}"
+          tag_name:    "${{ env.VERSION }}"
+          name:        "PurchaseConnector-Dynamic ${{ env.VERSION }}"
           draft:       false
         env:
           GITHUB_TOKEN: ${{ secrets.PC_DYNAMIC_TOKEN }}
