@@ -299,7 +299,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "any Swift.Error",
+                "printedName": "Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -348,12 +348,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "_Concurrency.Task<(), any Swift.Error>?",
+                "printedName": "_Concurrency.Task<(), Swift.Error>?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Task",
-                    "printedName": "_Concurrency.Task<(), any Swift.Error>",
+                    "printedName": "_Concurrency.Task<(), Swift.Error>",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -363,7 +363,7 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Error",
-                        "printedName": "any Swift.Error",
+                        "printedName": "Swift.Error",
                         "usr": "s:s5ErrorP"
                       }
                     ],
@@ -393,12 +393,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "_Concurrency.Task<(), any Swift.Error>?",
+                    "printedName": "_Concurrency.Task<(), Swift.Error>?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Task",
-                        "printedName": "_Concurrency.Task<(), any Swift.Error>",
+                        "printedName": "_Concurrency.Task<(), Swift.Error>",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -408,7 +408,7 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "any Swift.Error",
+                            "printedName": "Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -442,12 +442,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "_Concurrency.Task<(), any Swift.Error>?",
+                    "printedName": "_Concurrency.Task<(), Swift.Error>?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Task",
-                        "printedName": "_Concurrency.Task<(), any Swift.Error>",
+                        "printedName": "_Concurrency.Task<(), Swift.Error>",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -457,7 +457,7 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "any Swift.Error",
+                            "printedName": "Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -625,12 +625,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
+                "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                    "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                     "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                   }
                 ],
@@ -657,12 +657,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                        "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                         "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                       }
                     ],
@@ -693,12 +693,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                        "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                         "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                       }
                     ],
@@ -794,12 +794,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
+                "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                    "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                     "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                   }
                 ],
@@ -2689,12 +2689,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "(any Swift.Error)?",
+                "printedName": "Swift.Error?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Error",
-                    "printedName": "any Swift.Error",
+                    "printedName": "Swift.Error",
                     "usr": "s:s5ErrorP"
                   }
                 ],
@@ -3870,7 +3870,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "([Swift.String : Any]?, (any Swift.Error)?) -> ()",
+                "printedName": "([Swift.String : Any]?, Swift.Error?) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3880,7 +3880,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Tuple",
-                    "printedName": "([Swift.String : Any]?, (any Swift.Error)?)",
+                    "printedName": "([Swift.String : Any]?, Swift.Error?)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -3912,12 +3912,12 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
+                        "printedName": "Swift.Error?",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "any Swift.Error",
+                            "printedName": "Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -4015,12 +4015,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
+                "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitDelegate",
-                    "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                   }
                 ],
@@ -4044,12 +4044,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4082,12 +4082,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4117,7 +4117,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKitProtocol",
-                "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
+                "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
                 "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
               }
             ],
@@ -4139,7 +4139,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitProtocol",
-                    "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
                   }
                 ],
@@ -4347,7 +4347,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?"
+                "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?"
               }
             ],
             "declKind": "Var",
@@ -4375,12 +4375,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4412,12 +4412,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4475,7 +4475,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKitProtocol",
-                "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
+                "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
                 "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
               }
             ],
@@ -4503,7 +4503,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitProtocol",
-                    "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
+                    "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
                   }
                 ],
@@ -4584,13 +4584,26 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[StoreKit.Product]",
+                "printedName": "[(StoreKit.Product, StoreKit.Transaction)]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Product",
-                    "printedName": "StoreKit.Product",
-                    "usr": "s:8StoreKit7ProductV"
+                    "name": "Tuple",
+                    "printedName": "(StoreKit.Product, StoreKit.Transaction)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Product",
+                        "printedName": "StoreKit.Product",
+                        "usr": "s:8StoreKit7ProductV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Transaction",
+                        "printedName": "StoreKit.Transaction",
+                        "usr": "s:8StoreKit11TransactionV"
+                      }
+                    ]
                   }
                 ],
                 "usr": "s:Sa"
@@ -4611,8 +4624,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductVGSayAF11TransactionVG_tYaKF",
-            "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductVGSayAF11TransactionVG_tYaKF",
+            "usr": "s:17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductV_AF11TransactionVtGSayAJG_tYaKF",
+            "mangledName": "$s17PurchaseConnector14AFSDKStoreKit2C13fetchProducts4fromSay8StoreKit7ProductV_AF11TransactionVtGSayAJG_tYaKF",
             "moduleName": "PurchaseConnector",
             "declAttributes": [
               "Final"
@@ -4675,7 +4688,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "any Swift.Error",
+                "printedName": "Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -5279,7 +5292,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKit2UserDefaultsProtocol",
-                "printedName": "any PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
+                "printedName": "PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
                 "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP"
               }
             ],
@@ -5455,7 +5468,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKit2UserDefaultsProtocol",
-                "printedName": "any PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
+                "printedName": "PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
                 "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP"
               }
             ],
@@ -6113,13 +6126,26 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[StoreKit.Product]",
+                "printedName": "[(StoreKit.Product, StoreKit.Transaction)]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Product",
-                    "printedName": "StoreKit.Product",
-                    "usr": "s:8StoreKit7ProductV"
+                    "name": "Tuple",
+                    "printedName": "(StoreKit.Product, StoreKit.Transaction)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Product",
+                        "printedName": "StoreKit.Product",
+                        "usr": "s:8StoreKit7ProductV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Transaction",
+                        "printedName": "StoreKit.Transaction",
+                        "usr": "s:8StoreKit11TransactionV"
+                      }
+                    ]
                   }
                 ],
                 "usr": "s:Sa"
@@ -6140,8 +6166,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8StoreKit11TransactionV17PurchaseConnectorE29fetchProductsFromTransactions4fromSayAA7ProductVGSayACG_tYaKFZ",
-            "mangledName": "$s8StoreKit11TransactionV17PurchaseConnectorE29fetchProductsFromTransactions4fromSayAA7ProductVGSayACG_tYaKFZ",
+            "usr": "s:8StoreKit11TransactionV17PurchaseConnectorE29fetchProductsFromTransactions4fromSayAA7ProductV_ACtGSayACG_tYaKFZ",
+            "mangledName": "$s8StoreKit11TransactionV17PurchaseConnectorE29fetchProductsFromTransactions4fromSayAA7ProductV_ACtGSayACG_tYaKFZ",
             "moduleName": "PurchaseConnector",
             "static": true,
             "isFromExtension": true,
@@ -6454,98 +6480,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 824,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 920,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKTransactionSK2.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKTransactionSK2.swift",
       "kind": "StringLiteral",
       "offset": 218,
       "length": 19,
       "value": "\"PurchaseConnector.AFSDKTransactionSK2\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKProductSK2.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKProductSK2.swift",
       "kind": "StringLiteral",
       "offset": 215,
       "length": 15,
       "value": "\"PurchaseConnector.AFSDKProductSK2\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
       "kind": "Dictionary",
       "offset": 3494,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 209,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 209,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "IntegerLiteral",
       "offset": 635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
       "offset": 238,
       "length": 14,
       "value": "\"PurchaseConnector.AFSDKStoreKit2\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 21,
       "value": "\"AF_SK2_Transactions\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 681,
       "length": 19,
       "value": "\"AF_SK2_DidSendARS\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 489,
       "length": 21,
