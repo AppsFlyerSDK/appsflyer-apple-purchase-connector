@@ -31,7 +31,7 @@ support@appsflyer.com
 
 ## <a id="plugin-build-for"> This Module is Built for
 - AppsFlyer SDK:
-- iOS AppsFlyer SDK **6.17.1** .
+- iOS AppsFlyer SDK **6.17.2** .
 - 6.8.0+: StoreKit 1 support
 - 6.16.2+: StoreKit 1 & 2 support
 - Minimum iOS Version: 12
@@ -50,6 +50,7 @@ support@appsflyer.com
 | 6.16.2   |  6.16.2 |
 | 6.17.0   |  6.17.0 |
 | 6.17.1   |  6.17.1 |
+| 6.17.2   |  6.17.2 |
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
 Add to your Podfile and run `pod install`:
@@ -69,7 +70,7 @@ pod 'PurchaseConnector/Strict'
 Go to the `Carthage` folder in the root of the repository. Open `purchase-connector-dynamic.json` or `purchase-connector-static.json`, click raw, copy and paste the URL of the file to your `Cartfile`: 
 ```
 binary "https://raw.githubusercontent.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/main/Carthage/purchase-connector-dynamic.json" == BIINARY_VERSION
-binary "https://raw.githubusercontent.com/AppsFlyerSDK/AppsFlyerFramework/master/Carthage/appsflyer-ios.json" ~> 6.16.2
+binary "https://raw.githubusercontent.com/AppsFlyerSDK/AppsFlyerFramework/master/Carthage/appsflyer-ios.json" ~> 6.17.2
 ```
 Then open project folder in the terminal and use command `carthage update --use-xcframeworks`, then, drag and drop PurchaseConnector.xcframework binary and AppsFlyerLib.framework (from Carthage/Build/iOS folder).
 
