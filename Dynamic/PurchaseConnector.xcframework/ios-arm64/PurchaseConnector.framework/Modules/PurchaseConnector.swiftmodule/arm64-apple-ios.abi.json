@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "PurchaseConnector",
+    "printedName": "PurchaseConnector",
     "children": [
       {
         "kind": "Import",
@@ -207,6 +207,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -232,6 +246,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -299,7 +320,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -333,6 +354,22 @@
           "Available",
           "Available",
           "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -348,12 +385,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "_Concurrency.Task<(), Swift.Error>?",
+                "printedName": "_Concurrency.Task<(), any Swift.Error>?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Task",
-                    "printedName": "_Concurrency.Task<(), Swift.Error>",
+                    "printedName": "_Concurrency.Task<(), any Swift.Error>",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -363,7 +400,7 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Error",
-                        "printedName": "Swift.Error",
+                        "printedName": "any Swift.Error",
                         "usr": "s:s5ErrorP"
                       }
                     ],
@@ -393,12 +430,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "_Concurrency.Task<(), Swift.Error>?",
+                    "printedName": "_Concurrency.Task<(), any Swift.Error>?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Task",
-                        "printedName": "_Concurrency.Task<(), Swift.Error>",
+                        "printedName": "_Concurrency.Task<(), any Swift.Error>",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -408,7 +445,7 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "Swift.Error",
+                            "printedName": "any Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -442,12 +479,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "_Concurrency.Task<(), Swift.Error>?",
+                    "printedName": "_Concurrency.Task<(), any Swift.Error>?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Task",
-                        "printedName": "_Concurrency.Task<(), Swift.Error>",
+                        "printedName": "_Concurrency.Task<(), any Swift.Error>",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -457,7 +494,7 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "Swift.Error",
+                            "printedName": "any Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -625,12 +662,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
+                "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                    "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                     "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                   }
                 ],
@@ -657,12 +694,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                        "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                         "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                       }
                     ],
@@ -693,12 +730,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                        "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                         "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                       }
                     ],
@@ -794,12 +831,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol?",
+                "printedName": "(any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKit2ObserverDelegateProtocol",
-                    "printedName": "PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
+                    "printedName": "any PurchaseConnector.AFSDKStoreKit2ObserverDelegateProtocol",
                     "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
                   }
                 ],
@@ -848,6 +885,22 @@
           "Available",
           "Available",
           "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -1038,6 +1091,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1277,6 +1344,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2689,12 +2770,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "Swift.Error?",
+                "printedName": "(any Swift.Error)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Error",
-                    "printedName": "Swift.Error",
+                    "printedName": "any Swift.Error",
                     "usr": "s:s5ErrorP"
                   }
                 ],
@@ -2861,6 +2942,20 @@
           "Available"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "AFSDKProductProtocol",
@@ -3191,6 +3286,22 @@
         "declAttributes": [
           "ObjC",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -3375,6 +3486,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3415,6 +3540,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -3590,6 +3722,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3630,6 +3776,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -3709,6 +3862,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -3870,7 +4037,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "([Swift.String : Any]?, Swift.Error?) -> ()",
+                "printedName": "([Swift.String : Any]?, (any Swift.Error)?) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3880,7 +4047,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Tuple",
-                    "printedName": "([Swift.String : Any]?, Swift.Error?)",
+                    "printedName": "([Swift.String : Any]?, (any Swift.Error)?)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -3912,12 +4079,12 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Optional",
-                        "printedName": "Swift.Error?",
+                        "printedName": "(any Swift.Error)?",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "Error",
-                            "printedName": "Swift.Error",
+                            "printedName": "any Swift.Error",
                             "usr": "s:s5ErrorP"
                           }
                         ],
@@ -4000,6 +4167,22 @@
         "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -4015,12 +4198,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
+                "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitDelegate",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
+                    "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                   }
                 ],
@@ -4044,12 +4227,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4082,12 +4265,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4117,7 +4300,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKitProtocol",
-                "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
+                "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
                 "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
               }
             ],
@@ -4139,7 +4322,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitProtocol",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
+                    "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
                   }
                 ],
@@ -4248,6 +4431,22 @@
         "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
         "declAttributes": [
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -4347,7 +4546,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?"
+                "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -4375,12 +4574,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4412,12 +4611,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitDelegate?",
+                    "printedName": "(any PurchaseConnector.AFSDKStoreKitDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "AFSDKStoreKitDelegate",
-                        "printedName": "PurchaseConnector.AFSDKStoreKitDelegate",
+                        "printedName": "any PurchaseConnector.AFSDKStoreKitDelegate",
                         "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitDelegate"
                       }
                     ],
@@ -4475,7 +4674,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKitProtocol",
-                "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
+                "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
                 "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
               }
             ],
@@ -4503,7 +4702,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "AFSDKStoreKitProtocol",
-                    "printedName": "PurchaseConnector.AFSDKStoreKitProtocol",
+                    "printedName": "any PurchaseConnector.AFSDKStoreKitProtocol",
                     "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKStoreKitProtocol"
                   }
                 ],
@@ -4688,7 +4887,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -4834,6 +5033,20 @@
             "printedName": "AFSDKStoreKit2ObserverDelegateProtocol",
             "usr": "s:17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP",
             "mangledName": "$s17PurchaseConnector38AFSDKStoreKit2ObserverDelegateProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -5070,7 +5283,23 @@
         "declKind": "Protocol",
         "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP",
         "mangledName": "$s17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP",
-        "moduleName": "PurchaseConnector"
+        "moduleName": "PurchaseConnector",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -5258,6 +5487,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5276,6 +5519,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -5292,7 +5542,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKit2UserDefaultsProtocol",
-                "printedName": "PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
+                "printedName": "any PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
                 "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP"
               }
             ],
@@ -5468,7 +5718,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "AFSDKStoreKit2UserDefaultsProtocol",
-                "printedName": "PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
+                "printedName": "any PurchaseConnector.AFSDKStoreKit2UserDefaultsProtocol",
                 "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP"
               }
             ],
@@ -5851,6 +6101,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6027,6 +6291,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6098,20 +6376,35 @@
         "usr": "s:Sci",
         "mangledName": "$sSci",
         "moduleName": "_Concurrency",
-        "genericSig": "<τ_0_0.AsyncIterator : _Concurrency.AsyncIteratorProtocol, τ_0_0.Element == τ_0_0.AsyncIterator.Element>",
-        "sugared_genericSig": "<Self.AsyncIterator : _Concurrency.AsyncIteratorProtocol, Self.Element == Self.AsyncIterator.Element>",
+        "genericSig": "<τ_0_0.AsyncIterator : _Concurrency.AsyncIteratorProtocol, τ_0_0.Element == τ_0_0.AsyncIterator.Element, τ_0_0.Failure == τ_0_0.AsyncIterator.Failure>",
+        "sugared_genericSig": "<Self.AsyncIterator : _Concurrency.AsyncIteratorProtocol, Self.Element == Self.AsyncIterator.Element, Self.Failure == Self.AsyncIterator.Failure>",
         "intro_Macosx": "10.15",
         "intro_iOS": "13.0",
         "intro_tvOS": "13.0",
         "intro_watchOS": "6.0",
         "declAttributes": [
-          "AtRethrows",
           "Available",
           "Available",
           "Available",
           "Available"
         ],
-        "isExternal": true
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -6213,6 +6506,20 @@
             ],
             "usr": "s:s12IdentifiableP",
             "mangledName": "$ss12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -6419,6 +6726,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6480,102 +6801,60 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 824,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 920,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKProductSK2.swift",
-      "kind": "StringLiteral",
-      "offset": 215,
-      "length": 15,
-      "value": "\"PurchaseConnector.AFSDKProductSK2\""
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKTransactionSK2.swift",
-      "kind": "StringLiteral",
-      "offset": 218,
-      "length": 19,
-      "value": "\"PurchaseConnector.AFSDKTransactionSK2\""
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
       "kind": "Dictionary",
       "offset": 3494,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 209,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
-      "kind": "IntegerLiteral",
-      "offset": 209,
-      "length": 13,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
-      "kind": "IntegerLiteral",
-      "offset": 302,
-      "length": 7,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "IntegerLiteral",
       "offset": 635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
-      "kind": "StringLiteral",
-      "offset": 238,
-      "length": 14,
-      "value": "\"PurchaseConnector.AFSDKStoreKit2\""
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 21,
       "value": "\"AF_SK2_Transactions\""
     },
     {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/amit.levy\/xCodeWorkspace\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 681,
       "length": 19,
       "value": "\"AF_SK2_DidSendARS\""
-    },
-    {
-      "filePath": "\/Users\/moris.gateno\/Desktop\/AppsFlyer\/Projects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
-      "kind": "StringLiteral",
-      "offset": 489,
-      "length": 21,
-      "value": "\"PurchaseConnector.AFSDKStoreKit2Storage\""
     }
   ]
 }
