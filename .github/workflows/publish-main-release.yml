@@ -163,13 +163,9 @@ jobs:
           git commit -m "chore: bump to $VERSION"
           git push origin "release-bump-$VERSION" --tags
           
-          PR_NUMBER=$(gh pr create \
-            --repo AppsFlyerSDK/PurchaseConnector-Dynamic \
-            --title "$TITLE" \
-            --body "$BODY" \
-            --head "release-bump-$VERSION" \
-            --base main \
-            --json number --jq '.number')
+          gh pr create --repo AppsFlyerSDK/PurchaseConnector-Dynamic -B main \
+            --title "chore: bump to $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST]")" \
+            --body "Update for release $VERSION"
             
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
