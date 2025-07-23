@@ -170,13 +170,22 @@ jobs:
     outputs:
       pr_number: ${{ steps.create_pr.outputs.pr_number }}
     steps:
-      - name: Create comprehensive PR
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create PR
         id: create_pr
         env:
           VERSION: ${{ needs.setup.outputs.version }}
           BRANCH_NAME: ${{ needs.update-all-files.outputs.branch_name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Checkout the branch we created
+          git fetch origin
+          git checkout "$BRANCH_NAME"
+          
           # Create PR
           gh pr create -B main \
             --title "chore: bump version to $VERSION$([ "${{ needs.setup.outputs.test_mode }}" == "true" ] && echo " [TEST]")" \
