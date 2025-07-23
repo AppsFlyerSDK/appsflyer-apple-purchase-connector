@@ -58,14 +58,15 @@ jobs:
           fi
           
           # Create release with artifacts
-          URL=$(gh release create "$VERSION" \
+          gh release create "$VERSION" \
             --title "$TITLE" \
             --notes "$NOTES" \
             --draft="$TEST_MODE" \
             purchase-connector-static.xcframework.zip \
-            purchase-connector-dynamic.xcframework.zip \
-            --json url --jq '.url')
-            
+            purchase-connector-dynamic.xcframework.zip
+          
+          # Get the release URL
+          URL="https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/tag/$VERSION"
           echo "url=$URL" >> $GITHUB_OUTPUT
 
   publish-cocoapods:
