@@ -97,8 +97,6 @@ jobs:
           
           echo "✅ XCFrameworks validated"
 
-
-
   create-pr:
     needs: [setup]
     runs-on: ubuntu-latest
@@ -127,6 +125,11 @@ jobs:
           TEST_MODE: ${{ needs.setup.outputs.test_mode }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Debug: Check current directory and git status
+          pwd
+          ls -la
+          git status
+          
           # Create branch
           git checkout -b "$BRANCH_NAME"
           
@@ -144,10 +147,19 @@ jobs:
           git commit -m "chore: bump version to $VERSION"
           git push origin "$BRANCH_NAME" --tags
           
-          # Create PR
-          gh pr create -B main \
+          # Debug: Check git status after push
+          git status
+          git branch -a
+          
+          # Create PR and capture the number
+          # Ensure we're in the right directory
+          cd $GITHUB_WORKSPACE
+          pwd
+          git status
+          
+          PR_NUMBER=$(gh pr create -B main \
             --title "chore: bump version to $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST]")" \
-            --body "Version bump to $VERSION"
+            --body "Version bump to $VERSION")
           
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
