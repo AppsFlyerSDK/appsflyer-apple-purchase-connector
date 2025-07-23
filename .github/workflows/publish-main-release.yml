@@ -1,0 +1,210 @@
+name: "Workflow 3: Publish Main Release"
+
+on:
+  repository_dispatch:
+    types: [pr_merged_ready]
+
+jobs:
+  validate-and-release:
+    runs-on: macos-latest
+    outputs:
+      version: ${{ steps.validate.outputs.version }}
+      test_mode: ${{ steps.validate.outputs.test_mode }}
+      release_url: ${{ steps.release.outputs.url }}
+    steps:
+      - name: Validate and setup
+        id: validate
+        env:
+          MERGE_SHA: ${{ github.event.client_payload.outputs.merge_sha }}
+          VERSION: ${{ github.event.client_payload.version }}
+          TEST_MODE: ${{ github.event.client_payload.outputs.test_mode }}
+        run: |
+          set -e
+          
+          # Validate inputs
+          [[ -n "$MERGE_SHA" && -n "$VERSION" ]] || {
+            echo "ERROR: Missing required data in payload" >&2
+            exit 1
+          }
+          
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "test_mode=$TEST_MODE" >> $GITHUB_OUTPUT
+
+      - name: Checkout repo at merge commit
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.outputs.merge_sha }}
+          fetch-depth: 0
+
+      - name: Create GitHub release
+        id: release
+        env:
+          VERSION: ${{ steps.validate.outputs.version }}
+          TEST_MODE: ${{ steps.validate.outputs.test_mode }}
+          GITHUB_TOKEN: ${{ secrets.APPROVER_TOKEN }}
+        run: |
+          set -e
+          
+          # Create release artifacts
+          ./scripts/zip_artifacts.sh
+          
+          # Prepare release title and notes
+          TITLE="Release $VERSION"
+          NOTES="Release $VERSION"
+          
+          if [[ "$TEST_MODE" == "true" ]]; then
+            TITLE="[TEST] $TITLE"
+            NOTES="[TEST MODE] $NOTES - This is a test release, not for production use."
+          fi
+          
+          # Create release with artifacts
+          URL=$(gh release create "$VERSION" \
+            --title "$TITLE" \
+            --notes "$NOTES" \
+            --draft="$TEST_MODE" \
+            purchase-connector-static.xcframework.zip \
+            purchase-connector-dynamic.xcframework.zip \
+            --json url --jq '.url')
+            
+          echo "url=$URL" >> $GITHUB_OUTPUT
+
+  publish-cocoapods:
+    needs: validate-and-release
+    # Skip if in test mode
+    if: needs.validate-and-release.outputs.test_mode != 'true'
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.outputs.merge_sha }}
+
+      - name: Publish to CocoaPods
+        continue-on-error: true
+        env:
+          VERSION: ${{ needs.validate-and-release.outputs.version }}
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          set -e
+          
+          # Only attempt if we have the token
+          [[ -n "$COCOAPODS_TRUNK_TOKEN" ]] || {
+            echo "Skipping CocoaPods publish - no trunk token provided"
+            exit 0
+          }
+          
+          gem install cocoapods
+          pod repo update
+          pod trunk push PurchaseConnector.podspec --allow-warnings --use-libraries
+
+  prepare-dynamic-pr:
+    needs: validate-and-release
+    runs-on: ubuntu-latest
+    outputs:
+      pr_number: ${{ steps.create_pr.outputs.pr_number }}
+    steps:
+      - name: Checkout dynamic repo
+        uses: actions/checkout@v3
+        with:
+          repository: AppsFlyerSDK/PurchaseConnector-Dynamic
+          token: ${{ secrets.PC_DYNAMIC_TOKEN }}
+          path: dynamic-repo
+
+      - name: Download release artifact
+        env:
+          VERSION: ${{ needs.validate-and-release.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          cd dynamic-repo
+          
+          # Download the dynamic XCFramework
+          gh release download "$VERSION" -p "*dynamic.xcframework.zip"
+
+      - name: Update Package.swift
+        id: create_pr
+        env:
+          VERSION: ${{ needs.validate-and-release.outputs.version }}
+          TEST_MODE: ${{ needs.validate-and-release.outputs.test_mode }}
+          RELEASE_URL: ${{ needs.validate-and-release.outputs.release_url }}
+          GITHUB_TOKEN: ${{ secrets.PC_DYNAMIC_TOKEN }}
+        run: |
+          set -e
+          cd dynamic-repo
+          
+          # Create version branch
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout -b "release-bump-$VERSION"
+          
+          # Create tag
+          git tag -a "$VERSION" -m "Release $VERSION"
+          
+          # Compute new checksum
+          CHECKSUM=$(swift package compute-checksum purchase-connector-dynamic.xcframework.zip)
+          
+          # Update Package.swift
+          sed -i.bak -E \
+            -e "s|url: \"[^\"]+\"|url: \"$RELEASE_URL/purchase-connector-dynamic.xcframework.zip\"|" \
+            -e "s|checksum: \"[^\"]+\"|checksum: \"$CHECKSUM\"|" \
+            Package.swift
+          
+          # Create PR with test mode notice if enabled
+          TITLE="chore: bump to $VERSION"
+          BODY="Update for release $VERSION"
+          
+          if [[ "$TEST_MODE" == "true" ]]; then
+            TITLE="[TEST] $TITLE"
+            BODY="[TEST MODE] $BODY"
+          fi
+          
+          # Create PR
+          git add Package.swift
+          git commit -m "chore: bump to $VERSION"
+          git push origin "release-bump-$VERSION" --tags
+          
+          PR_NUMBER=$(gh pr create \
+            --repo AppsFlyerSDK/PurchaseConnector-Dynamic \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --head "release-bump-$VERSION" \
+            --base main \
+            --json number --jq '.number')
+            
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+  dispatch-to-dynamic:
+    needs: [validate-and-release, prepare-dynamic-pr]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger dynamic approval workflow
+        env:
+          VERSION: ${{ needs.validate-and-release.outputs.version }}
+          TEST_MODE: ${{ needs.validate-and-release.outputs.test_mode }}
+          PR_NUMBER: ${{ needs.prepare-dynamic-pr.outputs.pr_number }}
+          GITHUB_TOKEN: ${{ secrets.PC_DYNAMIC_TOKEN }}
+        run: |
+          # Trigger Workflow 4
+          gh api repos/AppsFlyerSDK/PurchaseConnector-Dynamic/dispatches \
+            --field event_type="dynamic_pr_ready" \
+            --field client_payload[version]="$VERSION" \
+            --field client_payload[outputs][pr_number]="$PR_NUMBER" \
+            --field client_payload[outputs][test_mode]="$TEST_MODE"
+
+      - name: Summary
+        env:
+          VERSION: ${{ needs.validate-and-release.outputs.version }}
+          TEST_MODE: ${{ needs.validate-and-release.outputs.test_mode }}
+          RELEASE_URL: ${{ needs.validate-and-release.outputs.release_url }}
+          PR_NUMBER: ${{ needs.prepare-dynamic-pr.outputs.pr_number }}
+        run: |
+          echo "## Workflow 3 Complete" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: $VERSION" >> $GITHUB_STEP_SUMMARY
+          if [[ "$TEST_MODE" == "true" ]]; then
+            echo "**Mode**: TEST MODE" >> $GITHUB_STEP_SUMMARY
+            echo "**Note**: CocoaPods publishing skipped in test mode" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "**Release**: $RELEASE_URL" >> $GITHUB_STEP_SUMMARY
+          echo "**Dynamic PR**: #$PR_NUMBER" >> $GITHUB_STEP_SUMMARY
+          echo "**Next**: Dynamic approval workflow triggered" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Release published" >> $GITHUB_STEP_SUMMARY 

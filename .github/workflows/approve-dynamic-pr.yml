@@ -1,0 +1,122 @@
+name: "Workflow 4: Approve Dynamic PR"
+
+on:
+  repository_dispatch:
+    types: [dynamic_pr_ready]
+
+jobs:
+  validate-and-approve:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.validate.outputs.version }}
+      pr_number: ${{ steps.validate.outputs.pr_number }}
+      test_mode: ${{ steps.validate.outputs.test_mode }}
+    steps:
+      - name: Validate and approve PR
+        id: validate
+        env:
+          GITHUB_TOKEN: ${{ secrets.APPROVER_TOKEN }}
+        run: |
+          set -e
+          
+          # Extract and validate data
+          PR_NUMBER="${{ github.event.client_payload.outputs.pr_number }}"
+          VERSION="${{ github.event.client_payload.version }}"
+          TEST_MODE="${{ github.event.client_payload.outputs.test_mode }}"
+          
+          # Validate required data
+          [[ -n "$PR_NUMBER" && -n "$VERSION" ]] || {
+            echo "ERROR: Missing required data in payload" >&2
+            exit 1
+          }
+          
+          # Verify PR exists and is open
+          gh pr view "$PR_NUMBER" --json state --jq '.state' \
+            --repo AppsFlyerSDK/PurchaseConnector-Dynamic | grep -q "^OPEN$" || {
+            echo "ERROR: PR #$PR_NUMBER not found or not open" >&2
+            exit 1
+          }
+          
+          # Auto-approve and enable merge
+          gh pr review "$PR_NUMBER" --approve \
+            --body "✅ Automated approval for dynamic release $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST MODE]")" \
+            --repo AppsFlyerSDK/PurchaseConnector-Dynamic
+            
+          gh pr merge "$PR_NUMBER" --auto --squash \
+            --repo AppsFlyerSDK/PurchaseConnector-Dynamic
+          
+          # Output values
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          echo "test_mode=$TEST_MODE" >> $GITHUB_OUTPUT
+
+  wait-and-release:
+    needs: validate-and-approve
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for merge and create release
+        env:
+          VERSION: ${{ needs.validate-and-approve.outputs.version }}
+          PR_NUMBER: ${{ needs.validate-and-approve.outputs.pr_number }}
+          TEST_MODE: ${{ needs.validate-and-approve.outputs.test_mode }}
+          GITHUB_TOKEN: ${{ secrets.PC_DYNAMIC_TOKEN }}
+        run: |
+          set -e
+          
+          # Wait for merge (2 minutes max)
+          for ((i=0; i<24; i++)); do
+            PR_DATA=$(gh pr view "$PR_NUMBER" \
+              --json state,mergeCommit \
+              --jq '{state: .state, sha: .mergeCommit.oid}' \
+              --repo AppsFlyerSDK/PurchaseConnector-Dynamic)
+            
+            if [[ $(echo "$PR_DATA" | jq -r '.state') == "MERGED" ]]; then
+              MERGE_SHA=$(echo "$PR_DATA" | jq -r '.sha')
+              break
+            fi
+            
+            [[ $(echo "$PR_DATA" | jq -r '.state') == "CLOSED" ]] && {
+              echo "ERROR: PR #$PR_NUMBER was closed without merging" >&2
+              exit 1
+            }
+            
+            sleep 5
+          done
+          
+          [[ -n "$MERGE_SHA" ]] || {
+            echo "ERROR: PR #$PR_NUMBER merge timeout after 120s" >&2
+            exit 1
+          }
+          
+          # Prepare release title and notes
+          TITLE="PurchaseConnector-Dynamic $VERSION"
+          NOTES="Dynamic SPM release for version $VERSION"
+          
+          if [[ "$TEST_MODE" == "true" ]]; then
+            TITLE="[TEST] $TITLE"
+            NOTES="[TEST MODE] $NOTES - This is a test release, not for production use."
+          fi
+          
+          # Create dynamic repo release
+          gh release create "$VERSION" \
+            --repo AppsFlyerSDK/PurchaseConnector-Dynamic \
+            --title "$TITLE" \
+            --notes "$NOTES" \
+            --draft="$TEST_MODE" \
+            --verify-tag
+
+      - name: Summary
+        env:
+          VERSION: ${{ needs.validate-and-approve.outputs.version }}
+          PR_NUMBER: ${{ needs.validate-and-approve.outputs.pr_number }}
+          TEST_MODE: ${{ needs.validate-and-approve.outputs.test_mode }}
+        run: |
+          echo "## Workflow 4 Complete" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: $VERSION" >> $GITHUB_STEP_SUMMARY
+          echo "**Dynamic PR**: #$PR_NUMBER" >> $GITHUB_STEP_SUMMARY
+          if [[ "$TEST_MODE" == "true" ]]; then
+            echo "**Mode**: TEST MODE" >> $GITHUB_STEP_SUMMARY
+            echo "**Note**: Release created as draft" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "**Status**: Merged and released" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Dynamic release complete" >> $GITHUB_STEP_SUMMARY
