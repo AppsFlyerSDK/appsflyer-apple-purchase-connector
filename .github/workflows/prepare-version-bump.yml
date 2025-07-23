@@ -97,75 +97,10 @@ jobs:
           
           echo "✅ XCFrameworks validated"
 
-  update-all-files:
-    needs: setup
-    runs-on: macos-latest
-    outputs:
-      branch_name: ${{ steps.create_branch.outputs.branch_name }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Create version bump branch
-        id: create_branch
-        env:
-          VERSION: ${{ needs.setup.outputs.version }}
-        run: |
-          BRANCH_NAME="release-bump-${VERSION}"
-          
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git checkout -b "$BRANCH_NAME"
-          
-          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
-      - name: Update all version files
-        env:
-          VERSION: ${{ needs.setup.outputs.version }}
-        run: |
-          set -e  # Exit immediately on any command failure
-          trap 'echo "ERROR: Update script failed at line $LINENO" >&2' ERR
-          
-          # Update all files in sequence
-          ./scripts/update_carthage.sh "$VERSION"
-          ./scripts/update_podspec.sh "$VERSION" 
-          ./scripts/update_spm.sh "$VERSION"
-          ./scripts/update_readme.sh "$VERSION"
-
-      - name: Commit and push changes
-        env:
-          VERSION: ${{ needs.setup.outputs.version }}
-          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Stage all modified files
-          git add Carthage/*.json PurchaseConnector.podspec Package.swift README.md
-          
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "ERROR: No changes to commit - scripts may have failed silently" >&2
-            exit 1
-          fi
-          
-          # Create tag
-          git tag -a "$VERSION" -m "Release $VERSION"
-          
-          # Single comprehensive commit
-          git commit -m "chore: bump version to $VERSION
-
-          - Updated Carthage JSONs
-          - Updated Podspec version
-          - Updated Swift Package manifest
-          - Updated README documentation
-          - Created release tag"
-          
-          # Push changes and tag
-          git push origin "$BRANCH_NAME" --tags
 
   create-pr:
-    needs: [setup, update-all-files]
+    needs: [setup]
     runs-on: ubuntu-latest
     outputs:
       pr_number: ${{ steps.create_pr.outputs.pr_number }}
@@ -175,20 +110,43 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create PR
+      - name: Setup Git
+        env:
+          VERSION: ${{ needs.setup.outputs.version }}
+          BRANCH_NAME: "release-bump-${{ needs.setup.outputs.version }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Create branch and update files
         id: create_pr
         env:
           VERSION: ${{ needs.setup.outputs.version }}
-          BRANCH_NAME: ${{ needs.update-all-files.outputs.branch_name }}
+          BRANCH_NAME: "release-bump-${{ needs.setup.outputs.version }}"
+          TEST_MODE: ${{ needs.setup.outputs.test_mode }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Checkout the branch we created
-          git fetch origin
-          git checkout "$BRANCH_NAME"
+          # Create branch
+          git checkout -b "$BRANCH_NAME"
+          
+          # Update all files
+          ./scripts/update_carthage.sh "$VERSION"
+          ./scripts/update_podspec.sh "$VERSION"
+          ./scripts/update_spm.sh "$VERSION"
+          ./scripts/update_readme.sh "$VERSION"
+          
+          # Create tag
+          git tag -a "$VERSION" -m "Release $VERSION"
+          
+          # Commit and push
+          git add .
+          git commit -m "chore: bump version to $VERSION"
+          git push origin "$BRANCH_NAME" --tags
           
           # Create PR
           gh pr create -B main \
-            --title "chore: bump version to $VERSION$([ "${{ needs.setup.outputs.test_mode }}" == "true" ] && echo " [TEST]")" \
+            --title "chore: bump version to $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST]")" \
             --body "Version bump to $VERSION"
           
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
