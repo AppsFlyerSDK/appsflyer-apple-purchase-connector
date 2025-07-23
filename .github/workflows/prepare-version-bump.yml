@@ -177,32 +177,10 @@ jobs:
           BRANCH_NAME: ${{ needs.update-all-files.outputs.branch_name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create PR with detailed description
-          PR_BODY="## Release Version Bump to $VERSION
-
-          This automated PR updates all version-related files for release $VERSION.
-
-          ### Changes Included:
-          - **Carthage JSONs**: Updated version references
-          - **Podspec**: Updated version and dependencies  
-          - **Swift Package**: Updated Package.swift manifest
-          - **Documentation**: Updated README with new version
-
-          ---
-          *This PR was created automatically by the release workflow.*"
-
-          # Create PR with test mode notice if enabled
-          if [[ "${{ needs.setup.outputs.test_mode }}" == "true" ]]; then
-            PR_BODY="[TEST MODE] $PR_BODY"
-          fi
-          
           # Create PR
-          PR_NUMBER=$(gh pr create \
-            --title "chore: bump version to $VERSION" \
-            --body "$PR_BODY" \
-            --head "$BRANCH_NAME" \
-            --base "${{ needs.setup.outputs.base_branch }}" \
-            --json number --jq '.number')
+          gh pr create -B main \
+            --title "chore: bump version to $VERSION$([ "${{ needs.setup.outputs.test_mode }}" == "true" ] && echo " [TEST]")" \
+            --body "Version bump to $VERSION"
           
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
