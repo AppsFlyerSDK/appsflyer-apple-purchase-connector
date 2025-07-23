@@ -36,8 +36,10 @@ jobs:
             exit 1
           }
           
-          # Check PR state
-          PR_STATE=$(gh pr view "$PR_NUMBER" --json state --jq '.state' 2>/dev/null || echo "NOT_FOUND")
+          # Check PR state with proper repo context
+          PR_STATE=$(gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json state --jq '.state' 2>/dev/null || echo "NOT_FOUND")
+          
+          echo "Debug: PR_STATE = $PR_STATE"
           
           if [[ "$PR_STATE" == "MERGED" ]]; then
             echo "PR #$PR_NUMBER already merged. Proceeding to next workflow."
@@ -49,6 +51,8 @@ jobs:
             echo "PR #$PR_NUMBER is open. Proceeding with approval logic."
           else
             echo "ERROR: PR #$PR_NUMBER not found or in unexpected state: $PR_STATE" >&2
+            echo "Debug: Trying to get PR info..."
+            gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector || echo "Failed to get PR info"
             exit 1
           fi
           
@@ -59,10 +63,10 @@ jobs:
           fi
           
           # Auto-approve and enable merge
-          gh pr review "$PR_NUMBER" --approve \
+          gh pr review "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --approve \
             --body "✅ Automated approval for release $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST MODE]")"
           
-          gh pr merge "$PR_NUMBER" --auto --squash
+          gh pr merge "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --auto --squash
           
           # Output values
           echo "version=$VERSION" >> $GITHUB_OUTPUT
@@ -85,7 +89,7 @@ jobs:
           set -e
           
           # Check if PR is already merged
-          PR_STATE=$(gh pr view "$PR_NUMBER" --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}')
+          PR_STATE=$(gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}')
           
           if [[ $(echo "$PR_STATE" | jq -r '.state') == "MERGED" ]]; then
             MERGE_SHA=$(echo "$PR_STATE" | jq -r '.sha')
@@ -93,7 +97,7 @@ jobs:
           else
             # Wait for merge (2 minutes max)
             for ((i=0; i<24; i++)); do
-              PR_DATA=$(gh pr view "$PR_NUMBER" --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}')
+              PR_DATA=$(gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}')
               
               if [[ $(echo "$PR_DATA" | jq -r '.state') == "MERGED" ]]; then
                 MERGE_SHA=$(echo "$PR_DATA" | jq -r '.sha')
