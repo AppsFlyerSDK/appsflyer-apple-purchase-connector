@@ -143,9 +143,12 @@ jobs:
           git push origin "$BRANCH_NAME" --tags
           
           # Create PR and capture the number
-          PR_NUMBER=$(gh pr create -B main \
+          PR_URL=$(gh pr create -B main \
             --title "chore: bump version to $VERSION$([ "$TEST_MODE" == "true" ] && echo " [TEST]")" \
             --body "Version bump to $VERSION")
+          
+          # Extract PR number from URL
+          PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
           
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
