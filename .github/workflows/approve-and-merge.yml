@@ -89,7 +89,7 @@ jobs:
           set -e
           
           # Check if PR is already merged
-          PR_STATE=$(gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}')
+          PR_STATE=$(gh pr view "$PR_NUMBER" --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json state,mergeCommit --jq '{state: .state, sha: .mergeCommit.oid}' 2>/dev/null || echo '{"state": "NOT_FOUND", "sha": ""}')
           
           if [[ $(echo "$PR_STATE" | jq -r '.state') == "MERGED" ]]; then
             MERGE_SHA=$(echo "$PR_STATE" | jq -r '.sha')
