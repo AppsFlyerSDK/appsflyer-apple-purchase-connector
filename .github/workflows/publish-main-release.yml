@@ -127,17 +127,18 @@ jobs:
           echo "Attempting to download release for version: $VERSION"
           
           # List available releases to debug
-          gh release list --limit 10
+          echo "Releases in main repo:"
+          gh release list --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --limit 10
           
-          # Try downloading with the version tag
-          if ! gh release download "$VERSION" -p "*dynamic.xcframework.zip"; then
+          # Try downloading with the version tag from the main repo
+          if ! gh release download --repo AppsFlyerSDK/appsflyer-apple-purchase-connector "$VERSION" -p "*dynamic.xcframework.zip"; then
             echo "Failed to download with version tag, trying to find the release by tag..."
             
-            # Try to find the release by tag name
-            RELEASE_ID=$(gh release list --json id,tagName --jq ".[] | select(.tagName == \"$VERSION\") | .id" | head -1)
+            # Try to find the release by tag name from the main repo
+            RELEASE_ID=$(gh release list --repo AppsFlyerSDK/appsflyer-apple-purchase-connector --json name,tagName --jq ".[] | select(.tagName == \"$VERSION\") | .name" | head -1)
             
             if [[ -n "$RELEASE_ID" ]]; then
-              echo "Found release ID: $RELEASE_ID"
+              echo "Found release: $RELEASE_ID"
               gh release download --repo AppsFlyerSDK/appsflyer-apple-purchase-connector "$RELEASE_ID" -p "*dynamic.xcframework.zip"
             else
               echo "ERROR: Could not find release for version $VERSION" >&2
