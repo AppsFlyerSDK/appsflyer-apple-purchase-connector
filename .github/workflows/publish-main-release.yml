@@ -64,6 +64,10 @@ jobs:
             --draft="$TEST_MODE" \
             purchase-connector-static.xcframework.zip \
             purchase-connector-dynamic.xcframework.zip
+            
+          # Verify the release was created with the correct tag
+          echo "Created release for version: $VERSION"
+          gh release list --limit 5
           
           # Get the release URL
           URL="https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/tag/$VERSION"
@@ -119,8 +123,27 @@ jobs:
           set -e
           cd dynamic-repo
           
-          # Download the dynamic XCFramework
-          gh release download "$VERSION" -p "*dynamic.xcframework.zip"
+          # Try to download the dynamic XCFramework
+          echo "Attempting to download release for version: $VERSION"
+          
+          # List available releases to debug
+          gh release list --limit 10
+          
+          # Try downloading with the version tag
+          if ! gh release download "$VERSION" -p "*dynamic.xcframework.zip"; then
+            echo "Failed to download with version tag, trying to find the release by tag..."
+            
+            # Try to find the release by tag name
+            RELEASE_ID=$(gh release list --json id,tagName --jq ".[] | select(.tagName == \"$VERSION\") | .id" | head -1)
+            
+            if [[ -n "$RELEASE_ID" ]]; then
+              echo "Found release ID: $RELEASE_ID"
+              gh release download --repo AppsFlyerSDK/appsflyer-apple-purchase-connector "$RELEASE_ID" -p "*dynamic.xcframework.zip"
+            else
+              echo "ERROR: Could not find release for version $VERSION" >&2
+              exit 1
+            fi
+          fi
 
       - name: Update Package.swift
         id: create_pr
