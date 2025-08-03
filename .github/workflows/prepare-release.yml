@@ -1,0 +1,150 @@
+name: "Prepare Release"
+
+on:
+  push:
+    branches: ['releases/**']
+
+jobs:
+  prepare:
+    # Only run when a releases/* branch is pushed
+    if: startsWith(github.ref, 'refs/heads/releases/')
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from branch name
+        id: extract_version
+        run: |
+          set -e
+          
+          # Extract version from branch name (e.g., releases/6.x.x/6.17.x/6.17.2_rc2 -> 6.17.2)
+          BRANCH_PATH=$(echo "${{ github.ref }}" | sed 's|refs/heads/releases/||')
+          
+          # Get the last part of the path and extract just the version number
+          LAST_PART=$(echo "$BRANCH_PATH" | sed 's|.*/||')
+          VERSION=$(echo "$LAST_PART" | sed 's|_[a-zA-Z0-9]*$||')
+          
+          # Validate version format (X.Y.Z)
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "ERROR: Invalid version format: $VERSION" >&2
+            echo "Expected format: X.Y.Z (e.g., 6.17.2)" >&2
+            exit 1
+          fi
+          
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Branch path: $BRANCH_PATH"
+          echo "Version extracted: $VERSION"
+
+      - name: Validate XCFrameworks present
+        run: |
+          set -e
+          
+          # Verify both XCFrameworks exist
+          if [ ! -d PurchaseConnector.xcframework ] || [ ! -d Dynamic/PurchaseConnector.xcframework ]; then
+            echo "ERROR: Missing XCFrameworks" >&2
+            echo "  - PurchaseConnector.xcframework: $([ -d PurchaseConnector.xcframework ] && echo '✅' || echo '❌')" >&2
+            echo "  - Dynamic/PurchaseConnector.xcframework: $([ -d Dynamic/PurchaseConnector.xcframework ] && echo '✅' || echo '❌')" >&2
+            exit 1
+          fi
+          
+          echo "✅ XCFrameworks validated"
+
+      - name: Update all version files
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+        run: |
+          set -e
+          
+          echo "Updating version files to $VERSION..."
+          
+          # Update all files
+          ./scripts/update_carthage.sh "$VERSION"
+          ./scripts/update_podspec.sh "$VERSION"
+          ./scripts/update_spm.sh "$VERSION"
+          ./scripts/update_readme.sh "$VERSION"
+          
+          echo "✅ All files updated"
+
+      - name: Create tag
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          
+          # Create tag with clean version number only
+          git tag "$VERSION" -m "Release $VERSION"
+          
+          echo "✅ Tag $VERSION created"
+
+      - name: Commit changes to releases branch
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+          BRANCH_NAME: ${{ github.ref_name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          
+          # Configure git
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          
+          # Add all changes
+          git add .
+          
+          # Commit changes
+          git commit -m "chore: bump version to $VERSION"
+          
+          # Push changes and tag back to the releases branch
+          git push origin "$BRANCH_NAME" --tags
+          
+          echo "✅ Changes committed to $BRANCH_NAME with tag"
+
+      - name: Create PR to main
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+          BRANCH_NAME: ${{ github.ref_name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          
+          # Determine target branch (main or test-main)
+          # For now, always target main - you can modify this logic
+          TARGET_BRANCH="main"
+          
+          # Create PR title
+          PR_TITLE="chore: release $VERSION"
+          if [[ "$TARGET_BRANCH" == "test-main" ]]; then
+            PR_TITLE="[TEST] $PR_TITLE"
+          fi
+          
+          # Create PR body
+          PR_BODY="Release version $VERSION"
+          if [[ "$TARGET_BRANCH" == "test-main" ]]; then
+            PR_BODY="[TEST MODE] $PR_BODY - This is a test release"
+          fi
+          
+          # Create PR
+          gh pr create \
+            --base "$TARGET_BRANCH" \
+            --head "$BRANCH_NAME" \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY"
+          
+          echo "✅ PR created from $BRANCH_NAME to $TARGET_BRANCH"
+
+      - name: Summary
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          echo "## Release Preparation Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: $VERSION" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch**: $BRANCH_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "**Target**: main" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Ready for manual approval and merge" >> $GITHUB_STEP_SUMMARY 
