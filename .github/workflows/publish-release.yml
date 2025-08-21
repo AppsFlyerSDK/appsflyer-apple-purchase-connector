@@ -4,7 +4,6 @@ on:
   pull_request:
     types: [closed]
     branches: [main, test-main]
-    paths: ['releases/**']
 
 jobs:
   publish:
