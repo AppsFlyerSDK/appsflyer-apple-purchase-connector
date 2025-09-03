@@ -100,7 +100,7 @@ jobs:
             purchase-connector-dynamic.xcframework.zip
           
           # Get release URL
-          RELEASE_URL="https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/tag/$VERSION"
+          RELEASE_URL="https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/$VERSION"
           echo "release_url=$RELEASE_URL" >> $GITHUB_OUTPUT
           
           echo "✅ GitHub release created: $RELEASE_URL"
