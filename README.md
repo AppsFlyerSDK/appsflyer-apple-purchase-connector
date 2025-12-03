@@ -31,7 +31,7 @@ support@appsflyer.com
 
 ## <a id="plugin-build-for"> This Module is Built for
 - AppsFlyer SDK:
-- iOS AppsFlyer SDK **6.17.7** .
+- iOS AppsFlyer SDK **6.17.8** .
 - 6.8.0+: StoreKit 1 support
 - 6.16.2+: StoreKit 1 & 2 support
 - Minimum iOS Version: 12
@@ -55,6 +55,7 @@ support@appsflyer.com
 | 6.17.5   |  6.17.5 |
 | 6.17.6   |  6.17.6 |
 | 6.17.7   |  6.17.7 |
+| 6.17.8   |  6.17.8 |
 
 ## <a id="cocoapods">  Adding The Connector To Your Project via Cocoapods: 
 Add to your Podfile and run `pod install`:
