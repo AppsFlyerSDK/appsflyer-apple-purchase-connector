@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Usage: ./scripts/update_spm.sh <version>
-VERSION="$1"
+# Usage: ./scripts/update_spm.sh <af_version>
+# Updates the AppsFlyerFramework-Static exact version pin in Package.swift.
+AF_VERSION="$1"
+[[ $# -eq 1 && -n "$AF_VERSION" ]] \
+  || { echo "Usage: $0 <af_version>"; exit 1; }
 PACKAGE_FILE="Package.swift"
 
-# Update exact version in SPM dependency
 sed -i.bak -E \
-  "s|(\.package\(url: \"[^\"]+\", exact: \")([0-9]+\.[0-9]+\.[0-9]+)(\")|\1${VERSION}\3|" \
+  "s|(\.package\(url: \"[^\"]+\", exact: \")([0-9]+\.[0-9]+\.[0-9]+)(\")|\1${AF_VERSION}\3|" \
   "${PACKAGE_FILE}"
 
 rm "${PACKAGE_FILE}.bak"
