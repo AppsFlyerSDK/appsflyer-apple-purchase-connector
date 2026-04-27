@@ -1,30 +1,33 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Usage: scripts/update_readme.sh <version>
-VERSION="$1"
+# Usage: scripts/update_readme.sh <pc_version> <af_version>
+PC_VERSION="$1"
+AF_VERSION="$2"
+[[ $# -eq 2 && -n "$PC_VERSION" && -n "$AF_VERSION" ]] \
+  || { echo "Usage: $0 <pc_version> <af_version>"; exit 1; }
 README="README.md"
 
-# 1) Update the bolded SDK version in the "Built for" section
-#    Matches: iOS AppsFlyer SDK **x.y.z**
+# Update the AF SDK version in the "Built for" line
 sed -i.bak -E \
-  "s|(iOS AppsFlyer SDK \*\*)[0-9]+\.[0-9]+\.[0-9]+(\*\*)|\1${VERSION}\2|" \
+  "s|(iOS AppsFlyer SDK \*\*)[0-9]+\.[0-9]+\.[0-9]+(\*\*)|\1${AF_VERSION}\2|" \
   "$README"
-  
-# 2) Insert a new compatibility row after the last table row
-#    Finds the last line starting with '|' and adds the new row + blank line
-awk -v v="$VERSION" ' \
-  { lines[NR] = $0 } \
-  /^\|.*\|/ { last = NR } \
-  END { \
-    for (i = 1; i <= NR; i++) { \
-      print lines[i]; \
-      if (i == last) { \
-        print "| " v "   |  " v " |"; \
-      } \
-    } \
-  }' "$README" > "${README}.tmp" \
-  && mv "${README}.tmp" "$README"
 
-# Cleanup backup file
+# Append a new compatibility row: | PC_VERSION | AF_VERSION |
+# Skip if this PC_VERSION row already exists (idempotent on re-runs)
+if ! grep -qF "| $PC_VERSION" "$README"; then
+  awk -v pc="$PC_VERSION" -v af="$AF_VERSION" '
+    { lines[NR] = $0 }
+    /^\|.*\|/ { last = NR }
+    END {
+      for (i = 1; i <= NR; i++) {
+        print lines[i];
+        if (i == last) {
+          print "| " pc "   |  " af " |";
+        }
+      }
+    }' "$README" > "${README}.tmp" \
+    && mv "${README}.tmp" "$README"
+fi
+
 rm "${README}.bak"

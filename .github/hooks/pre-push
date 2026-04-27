@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Blocks pushes to releases/* if .release-variables hasn't been updated vs main.
+set -euo pipefail
+
+RELEASE_VARS_FILE=".release-variables"
+BASE_BRANCH="main"
+
+while IFS=' ' read -r local_ref _local_sha remote_ref _remote_sha; do
+  if [[ "$remote_ref" == refs/heads/releases/* ]]; then
+    if ! git diff "origin/${BASE_BRANCH}" -- "$RELEASE_VARS_FILE" | grep -q .; then
+      echo "" >&2
+      echo "❌ ERROR: .release-variables has not been updated since ${BASE_BRANCH}." >&2
+      echo "" >&2
+      echo "   Update both values before pushing a release branch:" >&2
+      echo "     purchase_connector_version=X.Y.Z" >&2
+      echo "     appsflyer_framework_version=X.Y.Z" >&2
+      echo "" >&2
+      echo "   Then: git add .release-variables && git commit -m 'chore: bump release variables'" >&2
+      echo "" >&2
+      exit 1
+    fi
+  fi
+done
+
+exit 0
