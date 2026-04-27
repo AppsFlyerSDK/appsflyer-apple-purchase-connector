@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "PurchaseConnector",
-    "printedName": "PurchaseConnector",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
     "children": [
       {
         "kind": "Import",
@@ -207,20 +207,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -246,20 +232,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "SendableMetatype",
-            "printedName": "SendableMetatype",
-            "usr": "s:s16SendableMetatypeP",
-            "mangledName": "$ss16SendableMetatypeP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "BitwiseCopyable",
-            "printedName": "BitwiseCopyable",
-            "usr": "s:s15BitwiseCopyableP",
-            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -361,22 +333,6 @@
           "Available",
           "Available",
           "Available"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
         ]
       },
       {
@@ -892,22 +848,6 @@
           "Available",
           "Available",
           "Available"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
         ]
       },
       {
@@ -1098,20 +1038,6 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1351,20 +1277,6 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2951,20 +2863,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "AFSDKProductProtocol",
             "printedName": "AFSDKProductProtocol",
             "usr": "c:@M@PurchaseConnector@objc(pl)AFSDKProductProtocol",
@@ -3293,22 +3191,6 @@
         "declAttributes": [
           "ObjC",
           "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
         ]
       },
       {
@@ -3493,20 +3375,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3547,13 +3415,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "BitwiseCopyable",
-            "printedName": "BitwiseCopyable",
-            "usr": "s:s15BitwiseCopyableP",
-            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -3729,20 +3590,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3783,13 +3630,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "BitwiseCopyable",
-            "printedName": "BitwiseCopyable",
-            "usr": "s:s15BitwiseCopyableP",
-            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -3869,20 +3709,6 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -4174,22 +4000,6 @@
         "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
           "ObjC"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
         ]
       },
       {
@@ -4438,22 +4248,6 @@
         "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
         "declAttributes": [
           "ObjC"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
         ]
       },
       {
@@ -5043,20 +4837,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5290,23 +5070,7 @@
         "declKind": "Protocol",
         "usr": "s:17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP",
         "mangledName": "$s17PurchaseConnector34AFSDKStoreKit2UserDefaultsProtocolP",
-        "moduleName": "PurchaseConnector",
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
-        ]
+        "moduleName": "PurchaseConnector"
       },
       {
         "kind": "TypeDecl",
@@ -5494,20 +5258,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5526,13 +5276,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "BitwiseCopyable",
-            "printedName": "BitwiseCopyable",
-            "usr": "s:s15BitwiseCopyableP",
-            "mangledName": "$ss15BitwiseCopyableP"
           }
         ]
       },
@@ -6108,20 +5851,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6298,20 +6027,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6337,13 +6052,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "SendableMetatype",
-            "printedName": "SendableMetatype",
-            "usr": "s:s16SendableMetatypeP",
-            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -6390,35 +6098,20 @@
         "usr": "s:Sci",
         "mangledName": "$sSci",
         "moduleName": "_Concurrency",
-        "genericSig": "<τ_0_0.AsyncIterator : _Concurrency.AsyncIteratorProtocol, τ_0_0.Element == τ_0_0.AsyncIterator.Element, τ_0_0.Failure == τ_0_0.AsyncIterator.Failure>",
-        "sugared_genericSig": "<Self.AsyncIterator : _Concurrency.AsyncIteratorProtocol, Self.Element == Self.AsyncIterator.Element, Self.Failure == Self.AsyncIterator.Failure>",
+        "genericSig": "<τ_0_0.AsyncIterator : _Concurrency.AsyncIteratorProtocol, τ_0_0.Element == τ_0_0.AsyncIterator.Element>",
+        "sugared_genericSig": "<Self.AsyncIterator : _Concurrency.AsyncIteratorProtocol, Self.Element == Self.AsyncIterator.Element>",
         "intro_Macosx": "10.15",
         "intro_iOS": "13.0",
         "intro_tvOS": "13.0",
         "intro_watchOS": "6.0",
         "declAttributes": [
+          "AtRethrows",
           "Available",
           "Available",
           "Available",
           "Available"
         ],
-        "isExternal": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
-        ]
+        "isExternal": true
       },
       {
         "kind": "TypeDecl",
@@ -6523,20 +6216,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6562,13 +6241,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "SendableMetatype",
-            "printedName": "SendableMetatype",
-            "usr": "s:s16SendableMetatypeP",
-            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -6747,20 +6419,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6822,60 +6480,102 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 824,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 920,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKProductSK2.swift",
+      "kind": "StringLiteral",
+      "offset": 215,
+      "length": 15,
+      "value": "\"PurchaseConnector.AFSDKProductSK2\""
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKTransactionSK2.swift",
+      "kind": "StringLiteral",
+      "offset": 218,
+      "length": 19,
+      "value": "\"PurchaseConnector.AFSDKTransactionSK2\""
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
       "kind": "Dictionary",
       "offset": 3494,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 209,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "kind": "IntegerLiteral",
+      "offset": 209,
+      "length": 13,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "kind": "IntegerLiteral",
+      "offset": 302,
+      "length": 7,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "IntegerLiteral",
       "offset": 635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "kind": "StringLiteral",
+      "offset": 238,
+      "length": 14,
+      "value": "\"PurchaseConnector.AFSDKStoreKit2\""
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 21,
       "value": "\"AF_SK2_Transactions\""
     },
     {
-      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 681,
       "length": 19,
       "value": "\"AF_SK2_DidSendARS\""
+    },
+    {
+      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "kind": "StringLiteral",
+      "offset": 489,
+      "length": 21,
+      "value": "\"PurchaseConnector.AFSDKStoreKit2Storage\""
     }
   ]
 }
