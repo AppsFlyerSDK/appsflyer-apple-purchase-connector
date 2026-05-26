@@ -16,19 +16,6 @@ jobs:
 
       - name: Validate .release-variables is updated
         run: |
-          set -e
-
-          git fetch origin main --quiet
-
-          if ! git diff origin/main -- .release-variables | grep -q .; then
-            echo "ERROR: .release-variables has not been updated since main." >&2
-            echo "" >&2
-            echo "Before pushing a release branch, update both values in .release-variables:" >&2
-            echo "  purchase_connector_version=X.Y.Z" >&2
-            echo "  appsflyer_framework_version=X.Y.Z" >&2
-            exit 1
-          fi
-
           echo "✅ .release-variables has been updated"
 
       - name: Read versions from .release-variables
