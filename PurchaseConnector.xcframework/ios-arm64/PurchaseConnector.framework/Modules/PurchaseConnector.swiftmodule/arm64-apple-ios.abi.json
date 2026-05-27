@@ -7003,70 +7003,70 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 824,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 920,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
       "kind": "Dictionary",
       "offset": 3494,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 209,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKitProtocol.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "IntegerLiteral",
       "offset": 635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
       "offset": 13837,
       "length": 28,
       "value": "\"willRecordVIAP:completion:\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
       "offset": 13951,
       "length": 37,
       "value": "\"willRecordSubscriptions:completion:\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 21,
       "value": "\"AF_SK2_Transactions\""
     },
     {
-      "filePath": "\/Users\/ivan.obodovskyi\/Developer\/iOS-SDK\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
+      "filePath": "\/Users\/Amit.Levy\/XCodeProjects\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Storage.swift",
       "kind": "StringLiteral",
       "offset": 681,
       "length": 19,
