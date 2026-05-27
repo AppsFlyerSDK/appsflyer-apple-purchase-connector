@@ -20,5 +20,6 @@
   "6.17.9": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/6.17.9/purchase-connector-static.xcframework.zip",
   "6.18.0": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/6.18.0/purchase-connector-static.xcframework.zip",
   "6.18.1": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/6.18.1/purchase-connector-static.xcframework.zip",
-  "6.18.2": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/6.18.2/purchase-connector-static.xcframework.zip"
+  "6.18.2": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/6.18.2/purchase-connector-static.xcframework.zip",
+  "7.0.0": "https://github.com/AppsFlyerSDK/appsflyer-apple-purchase-connector/releases/download/7.0.0/purchase-connector-static.xcframework.zip"
 }
