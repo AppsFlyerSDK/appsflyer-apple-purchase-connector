@@ -21,11 +21,14 @@ jobs:
 
       - name: Extract version and detect test mode
         id: extract_version
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
           set -e
-          
+
           # Extract version from branch name (e.g., releases/6.x.x/6.17.x/6.17.2_rc2 -> 6.17.2)
-          BRANCH_PATH=$(echo "${{ github.event.pull_request.head.ref }}" | sed 's|releases/||')
+          # HEAD_REF is passed via env (not inline ${{ }}) to prevent shell injection from branch names.
+          BRANCH_PATH=$(echo "$HEAD_REF" | sed 's|releases/||')
           
           # Get the last part of the path and extract just the version number
           LAST_PART=$(echo "$BRANCH_PATH" | sed 's|.*/||')
