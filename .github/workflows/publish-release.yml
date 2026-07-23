@@ -2,16 +2,21 @@ name: "Publish Release"
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to publish (X.Y.Z), for recovering a release whose automatic publish run failed"
+        required: true
   pull_request:
     types: [closed]
     branches: [main, test-main]
 
 jobs:
   publish:
-    # Only run when a releases/* branch PR is merged to main/test-main
+    # Run when a releases/* branch PR is merged to main/test-main, or when manually dispatched
     if: >
-      github.event.pull_request.merged == true &&
-      startsWith(github.event.pull_request.head.ref, 'releases/')
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'releases/'))
     runs-on: macos-latest
     steps:
       - name: Checkout repo
@@ -23,31 +28,37 @@ jobs:
         id: extract_version
         env:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          DISPATCH_VERSION: ${{ github.event.inputs.version }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
           set -e
 
-          # Extract version from branch name (e.g., releases/6.x.x/6.17.x/6.17.2_rc2 -> 6.17.2)
-          # HEAD_REF is passed via env (not inline ${{ }}) to prevent shell injection from branch names.
-          BRANCH_PATH=$(echo "$HEAD_REF" | sed 's|releases/||')
-          
-          # Get the last part of the path and extract just the version number
-          LAST_PART=$(echo "$BRANCH_PATH" | sed 's|.*/||')
-          VERSION=$(echo "$LAST_PART" | sed 's|_[a-zA-Z0-9]*$||')
-          
-          # Detect test mode based on target branch
-          TEST_MODE="${{ github.event.pull_request.base.ref == 'test-main' }}"
-          
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            VERSION="$DISPATCH_VERSION"
+            TEST_MODE="false"
+          else
+            # Extract version from branch name (e.g., releases/6.x.x/6.17.x/6.17.2_rc2 -> 6.17.2)
+            # HEAD_REF is passed via env, not inlined into the shell script, to prevent shell injection from branch names.
+            BRANCH_PATH=$(echo "$HEAD_REF" | sed 's|releases/||')
+
+            # Get the last part of the path and extract just the version number
+            LAST_PART=$(echo "$BRANCH_PATH" | sed 's|.*/||')
+            VERSION=$(echo "$LAST_PART" | sed 's|_[a-zA-Z0-9]*$||')
+
+            # Detect test mode based on target branch
+            [[ "$BASE_REF" == "test-main" ]] && TEST_MODE="true" || TEST_MODE="false"
+          fi
+
           # Validate version format (X.Y.Z)
           if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "ERROR: Invalid version format: $VERSION" >&2
             echo "Expected format: X.Y.Z (e.g., 6.17.2)" >&2
             exit 1
           fi
-          
+
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "test_mode=$TEST_MODE" >> $GITHUB_OUTPUT
-          
-          echo "Branch path: $BRANCH_PATH"
+
           echo "Version: $VERSION"
           echo "Test Mode: $TEST_MODE"
 
