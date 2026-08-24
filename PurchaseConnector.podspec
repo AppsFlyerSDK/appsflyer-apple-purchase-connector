@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'PurchaseConnector'
-    s.version          = "7.0.1"
+    s.version          = "7.0.2"
     s.summary          = 'AppsFlyer iOS SDK ARS'
 
     s.description      = <<-DESC
@@ -22,20 +22,20 @@ Pod::Spec.new do |s|
     s.swift_version = '5.0'
 
     s.subspec 'Main' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework', '7.0.1'
+        ss.ios.dependency 'AppsFlyerFramework', '7.0.2'
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
         ss.ios.resource_bundles = {'PurchaseConnector_Privacy' => ['Resources/PrivacyInfo.xcprivacy']}
      end
 
     s.subspec 'Dynamic' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework/Dynamic','7.0.1'
+        ss.ios.dependency 'AppsFlyerFramework/Dynamic','7.0.2'
         ss.ios.preserve_paths = 'Dynamic/PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'Dynamic/PurchaseConnector.xcframework'
    end
 
     s.subspec 'Strict' do |ss|
-        ss.ios.dependency 'AppsFlyerFramework/Strict','7.0.1'
+        ss.ios.dependency 'AppsFlyerFramework/Strict','7.0.2'
         ss.ios.preserve_paths = 'PurchaseConnector.xcframework'
         ss.ios.vendored_frameworks = 'PurchaseConnector.xcframework'
         ss.ios.resource_bundles = {'PurchaseConnector_Privacy' => ['Resources/PrivacyInfo.xcprivacy']}
