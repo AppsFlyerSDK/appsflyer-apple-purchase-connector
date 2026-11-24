@@ -12,7 +12,7 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public protocol AFSDKStoreKit2ObserverDelegateProtocol : AnyObject {
-  func didReceiveVerifiedTransactions(_ transaction: Swift.Array<StoreKit.VerificationResult<StoreKit.Transaction>>)
+  func didReceiveVerifiedTransactions(_ transaction: [StoreKit.VerificationResult<StoreKit.Transaction>])
   func didFailToVerifyTransactions(_ error: any Swift.Error)
 }
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
