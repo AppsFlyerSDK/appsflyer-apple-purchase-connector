@@ -12,7 +12,7 @@ let package = Package(
             targets: ["PurchaseConnector"])
     ],
     dependencies: [
-        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static.git", exact: "7.0.4")
+        .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static.git", exact: "7.1.0")
     ],
     targets: [
         .binaryTarget(
