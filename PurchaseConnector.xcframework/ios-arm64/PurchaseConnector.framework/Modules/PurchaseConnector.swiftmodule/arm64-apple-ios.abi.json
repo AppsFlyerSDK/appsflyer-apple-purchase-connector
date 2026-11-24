@@ -7005,21 +7005,21 @@
     {
       "filePath": "\/var\/tmp\/builds\/mobile\/ios\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
-      "offset": 824,
+      "offset": 819,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/var\/tmp\/builds\/mobile\/ios\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2TransactionObserver.swift",
       "kind": "BooleanLiteral",
-      "offset": 920,
+      "offset": 915,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/var\/tmp\/builds\/mobile\/ios\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2Product.swift",
       "kind": "Dictionary",
-      "offset": 3494,
+      "offset": 3495,
       "length": 3,
       "value": "[]"
     },
@@ -7047,14 +7047,14 @@
     {
       "filePath": "\/var\/tmp\/builds\/mobile\/ios\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
-      "offset": 13837,
+      "offset": 13839,
       "length": 28,
       "value": "\"willRecordVIAP:completion:\""
     },
     {
       "filePath": "\/var\/tmp\/builds\/mobile\/ios\/appsflyer.sdk.ios\/PurchaseConnector\/PurchaseConnector\/AFSDKStoreKit2.swift",
       "kind": "StringLiteral",
-      "offset": 13951,
+      "offset": 13953,
       "length": 37,
       "value": "\"willRecordSubscriptions:completion:\""
     },
